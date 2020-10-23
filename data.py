@@ -161,7 +161,7 @@ def __exec_option(option, ask):
     except:
         pass
 
-def options(option = None):
+def options(option = None, ask = 0):
     '''Function ask which value you whant pass
     function return typle with data of __exec_option()
     '''
@@ -177,7 +177,6 @@ def options(option = None):
 
 Type your option --> '''
     while option != 0:
-        ask = 0
         if option == None:
             option = input(text)
             ask = 1

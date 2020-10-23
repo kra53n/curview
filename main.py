@@ -10,6 +10,7 @@ from modules.clear import clear
 OPTIONS_TO_SELECT = '''
 0 - quit
 1 - show courses
+2 - write currency
 '''
 
 
@@ -67,6 +68,25 @@ def show_courses():
         print(text)
     input()
 
+def write_currency():
+    '''Function write kind of currency to file
+    '''
+    import data
+    clear()
+    print('''What currency you whant to write?
+
+    1 - dollar
+    2 - bitcoin
+    3 - ethereum
+    4 - gold
+    5 - silver
+    6 - palladium
+    ''')
+    option = input('Write your option --> ')
+    dic = data.typle_to_dict(data.options(option, 1))
+    print(dic)
+    input()
+
 
 if __name__ == '__main__':
     __greeting()
@@ -79,7 +99,7 @@ if __name__ == '__main__':
             if choice == 1:
                 show_courses()
             elif choice == 2:
-                clear()
+                write_currency()
         else:
             clear()
             print('You can type only numbers in options'.upper(), end = ' ')
