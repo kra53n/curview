@@ -71,6 +71,7 @@ def show_courses():
 def write_currency():
     '''Function write kind of currency to file
     '''
+    # TODO: smash other function wtite_currency to small functions
     import data
     clear()
     print('''What currency you whant to write?
