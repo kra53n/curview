@@ -68,12 +68,9 @@ def show_courses():
         print(text)
     input()
 
-def write_currency():
-    '''Function write kind of currency to file
+def inf_write_currency():
+    '''Function print iformation of options
     '''
-    # TODO: smash other function wtite_currency to small functions
-    import data
-    clear()
     print('''What currency you whant to write?
 
     1 - dollar
@@ -83,8 +80,16 @@ def write_currency():
     5 - silver
     6 - palladium
     ''')
+
+def write_currency():
+    '''Function write kind of currency to file
+    '''
+    import data
+    clear()
+    inf_write_currency()
     option = input('Write your option --> ')
     dic = data.typle_to_dict(data.options(option, 1))
+    # TODO: write 'dic' to file with extension of json
     print(dic)
     input()
 
