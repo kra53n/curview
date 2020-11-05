@@ -81,6 +81,18 @@ def inf_write_currency():
     6 - palladium
     ''')
 
+def transit_data_to_sql3(data):
+    '''Funtcion takes argument(dic) from write_currency()
+    and transit this to base data with help of sqlite3
+    '''
+    import sqlite3 as sql
+    keys = ('date', 'name', 'course_rub', 'rub', 'course_dlr', 'dlr')
+    for key in keys:
+        if key in data.keys():
+            # TODO: finish this
+            print('All is work!', data[key])
+        input()
+
 def write_currency():
     '''Function write kind of currency to file
     '''
@@ -88,10 +100,11 @@ def write_currency():
     clear()
     inf_write_currency()
     option = input('Write your option --> ')
+    # TODO: write what is it mean in under
     dic = data.typle_to_dict(data.options(option, 1))
-    # TODO: write 'dic' to file with extension of json
     print(dic)
     input()
+    transit_data_to_sql3(dic)
 
 
 if __name__ == '__main__':
