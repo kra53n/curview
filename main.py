@@ -40,7 +40,6 @@ def __integer_agerssive():
     input()
     return -1
 
-
 def instructer():
     '''Functin show greeting and options for select
     Then output in integer number as choice
