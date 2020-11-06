@@ -1,6 +1,3 @@
-# author: Krai53n
-# date: 28.08.20
-
 from modules.parsing import dollar, bitcoin, ethereum, gold, silver, palladium
 from modules.clear import clear as __clear
 

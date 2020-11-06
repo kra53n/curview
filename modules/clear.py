@@ -1,6 +1,3 @@
-# author: Krai53n
-# date: 15.10.20
-
 from os import system
 from sys import platform
 

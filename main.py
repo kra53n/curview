@@ -1,6 +1,3 @@
-# author: Krai53n
-# date: 11.10.20
-
 from os import system as sys
 from time import sleep
 from modules.clear import clear

@@ -1,7 +1,3 @@
-# author: Krai53n
-# date: 24.08.20
-# last edit: 25.08.20
-
 from bs4 import BeautifulSoup
 import requests
 

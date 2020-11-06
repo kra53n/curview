@@ -1,6 +1,3 @@
-# author: Krai53n
-# date: 25.08.20
-
 import time
 
 
