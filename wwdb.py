@@ -1,7 +1,7 @@
 # WWDB - WORK WITH DATA BASE
 
 import sqlite3 as sql
-from modules.date import exactly_time as ex_t
+from date import exactly_time as ex_t
 
 
 ### CONSTANTS

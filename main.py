@@ -1,6 +1,6 @@
 from os import system as sys
 from time import sleep
-from modules.clear import clear
+from clear import clear
 
 
 ### CONSTANTS

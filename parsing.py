@@ -1,5 +1,7 @@
 from bs4 import BeautifulSoup
 import requests
+from sys import exit
+from clear import clear
 
 
 ### CONSTANTS
@@ -12,7 +14,13 @@ PATH_SITE_METAL = 'https://cbr.ru/hd_base/metall/metall_base_new/'
 def get_html(url = PATH_SITE):
     '''Function get html code and put it as text
     '''
-    html_doc = requests.get(url)
+    try:
+        html_doc = requests.get(url)
+    except:
+        clear()
+        print('Check your connection!'.upper())
+        input()
+        exit()
     if html_doc.status_code != 200:
         print('Page have some problems!')
     return html_doc.text

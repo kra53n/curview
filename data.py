@@ -1,19 +1,14 @@
-from modules.parsing import dollar, bitcoin, ethereum, gold, silver, palladium
-from modules.clear import clear as __clear
+from parsing import dollar, bitcoin, ethereum, gold, silver, palladium
+from clear import clear
 
 
 ### FUNCTIONS
-def __ask(ask):
-    '''Function ask user about something
-    '''
-    return input(ask)
-
 def __try_again():
     '''Function asks user type one more time
     beacause user type someting uncorrectly
     '''
-    __clear()
-    input('I`m sorry bit you type something strange! ')
+    clear()
+    input('I`m sorry but you type something strange! ')
     input('Let`s try again! ')
 
 def __dollar(ask):
@@ -22,7 +17,7 @@ def __dollar(ask):
     our money in rubles
     '''
     if ask == 1:
-        num = __ask('How many dollars you have? --> ')
+        num = input('How many dollars you have? --> ')
     try:
         if ask == 1:
             num = float(num)
@@ -40,7 +35,7 @@ def __bitcoin(ask):
     our money in dollars and our money in rubles
     '''
     if ask == 1:
-        num = __ask('How many bitcoins you have --> ')
+        num = input('How many bitcoins you have --> ')
     try:
         if ask == 1:
             num = float(num)
@@ -60,7 +55,7 @@ def __ethereum(ask):
     our money in dollars and our money in rubles
     '''
     if ask == 1:
-        num = __ask('How many ethereum you have --> ')
+        num = input('How many ethereum you have --> ')
     try:
         if ask == 1:
             num = float(num)
@@ -80,7 +75,7 @@ def __gold(ask):
     function return course of gold in rubles and our money in rub
     '''
     if ask == 1:
-        num = __ask('How many gold you have --> ')
+        num = input('How many gold you have --> ')
     try:
         if ask == 1:
             num = float(num)
@@ -98,7 +93,7 @@ def __silver(ask):
     function return course of silver in rub and our money in rub
     '''
     if ask == 1:
-        num = __ask('How many silver you have --> ')
+        num = input('How many silver you have --> ')
     try:
         if ask == 1:
             num = float(num)
@@ -116,7 +111,7 @@ def __palladium(ask):
     function return course of palladium in rub and our money in run
     '''
     if ask == 1:
-        num = __ask('How many palladium you have --> ')
+        num = input('How many palladium you have --> ')
     try:
         if ask == 1:
             num = float(num)
@@ -194,7 +189,7 @@ def typle_to_dict(data_typle):
     processing it to dictionary
     example --> typle_do_dict(options())
     '''
-    from modules.date import date
+    from date import date
     data = {'date': date}
     if len(data_typle) == 3:
         # dollarm gold, sivler, palladium
