@@ -3,3 +3,4 @@
   and tables with different currency dollar, bitcoin and e.t.c.
 - think more about message in wwdb.py in wwdb(). Maybe will better put it in funcion?
 - check exception of get_html() in parsing.py. And make it better
+- make costum options and not only witg ui and terminal interface

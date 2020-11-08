@@ -24,8 +24,12 @@ def wwdb(currency, choice):
     '''
     con = sql.connect(NAME_DB)
     # TODO: finish message
-    message = 'CREATE TABLE IF NOT EXISTS '
-    message += '`{}` (`name` STRING, `surname` STRING)'.format(currency)
+    row = ['bitcoin', 'ethereum']
+    message = 'CREATE TABLE IF NOT EXISTS `{}` '.format(currency)
+    message += '`date` STRING, `course_rub` REAL, `rub`'
+    if currency in row:
+        message += '(`course_dlr` REAL, `dlr` REAL)'
+
     with con:
         cur = con.cursor()
-        cur.execute('CREATE TABLE IF NOT EXISTS `test` (`name` STRING, `surname` STRING)')
+        cur.execute(message)
