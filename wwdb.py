@@ -8,7 +8,7 @@ from date import exactly_time as ex_t
 NAME_DB = str(ex_t()[0])
 
 
-### FUNTIOCNS
+### FUNCTIOCNS
 def write_to_db():
     pass
 

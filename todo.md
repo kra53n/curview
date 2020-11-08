@@ -4,3 +4,4 @@
 - think more about message in wwdb.py in wwdb(). Maybe will better put it in funcion?
 - check exception of get_html() in parsing.py. And make it better
 - make costum options and not only witg ui and terminal interface
+- in data.py with __ethereum(), __palladium() and e.t.c make one function with OPTION
