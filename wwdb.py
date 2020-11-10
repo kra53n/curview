@@ -10,7 +10,7 @@ NAME_DB = str(ex_t()[0])
 
 ### FUNCTIOCNS
 def text_for_creating_table(currency):
-    '''Funtcion collect message in dependece of
+    '''Funtcion collect message in dependence of
     situation
     ================================================
     Argument currency get type of currency for goal
@@ -25,7 +25,11 @@ def text_for_creating_table(currency):
     return message
 
 def text_for_filling_table(currency):
-    '''
+    '''Function collect message in dependence of
+    situation
+    ================================================
+    Argument of currency get dic of currency with
+    information
     '''
     row = ['bitcoin', 'ethereum']
     message = 'INSERT INTO `{}` '.format(currency['name'])
