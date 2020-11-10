@@ -66,3 +66,5 @@ def wwdb(currency, choice):
                     print(row[i], end = ' ')
         else:
             print('You are have mistake in choice'.upper())
+        con.commit()
+        cur.close()
