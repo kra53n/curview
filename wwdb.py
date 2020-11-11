@@ -5,7 +5,7 @@ from date import exactly_time as ex_t
 
 
 ### CONSTANTS
-NAME_DB = str(ex_t()[0])
+NAME_DB = str(ex_t()[0]) + '.db'
 
 
 ### FUNCTIOCNS
@@ -18,7 +18,7 @@ def text_for_creating_table(currency):
     '''
     row = ['bitcoin', 'ethereum']
     message = 'CREATE TABLE IF NOT EXISTS `{}` '.format(currency)
-    message += '(`date` STRING, `course_rubles` REAL, `rubles`'
+    message += '(`date` STRING, `course_rubles` REAL, `rubles` REAL'
     if currency in row:
         message += ', `course_dollar` REAL, `dollar` REAL'
     message += ')'
@@ -33,7 +33,7 @@ def text_for_filling_table(currency):
     '''
     row = ['bitcoin', 'ethereum']
     message = 'INSERT INTO `{}` '.format(currency['name'])
-    message += 'VALUES ({}, '.format(currency['date'])
+    message += 'VALUES ("{}", '.format(currency['date'])
     message += '{}, {}'.format(currency['course_rub'], currency['rub'])
     if currency['name'] in row:
         message += ', {}, {}'.format(currency['course_dlr'], currency['dlr'])

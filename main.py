@@ -1,6 +1,7 @@
 from os import system as sys
 from time import sleep
 from clear import clear
+from wwdb import wwdb
 
 
 ### CONSTANTS
@@ -89,18 +90,15 @@ def transit_data_to_sql3(data):
             print('All is work!', data[key])
         input()
 
-def write_currency():
+def write_currency(choice):
     '''Function write kind of currency to file
     '''
     import data
     clear()
     inf_write_currency()
     option = input('Write your option --> ')
-    # TODO: write what is it mean in under
     dic = data.typle_to_dict(data.options(option, 1))
-    print(dic)
-    input()
-    transit_data_to_sql3(dic)
+    wwdb(dic, choice)
 
 
 if __name__ == '__main__':
@@ -114,7 +112,7 @@ if __name__ == '__main__':
             if choice == 1:
                 show_courses()
             elif choice == 2:
-                write_currency()
+                write_currency(0)
         else:
             clear()
             print('You can type only numbers in options'.upper(), end = ' ')
