@@ -18,7 +18,8 @@ def text_for_creating_table(currency):
     of function
     '''
     message = 'CREATE TABLE IF NOT EXISTS `{}` '.format(currency)
-    message += '(`date` STRING, `course_rubles` REAL, `rubles` REAL'
+    message += '(`date` STRING, `amount` REAL,`course_rubles` REAL, '
+    message += '`rubles` REAL'
     if currency in CUR_ROW:
         message += ', `course_dollar` REAL, `dollar` REAL'
     message += ')'
@@ -33,6 +34,7 @@ def text_for_filling_table(currency):
     '''
     message = 'INSERT INTO `{}` '.format(currency['name'])
     message += 'VALUES ("{}", '.format(currency['date'])
+    message += '{}, '.format(currency['amount'])
     message += '{}, {}'.format(currency['course_rub'], currency['rub'])
     if currency['name'] in CUR_ROW:
         message += ', {}, {}'.format(currency['course_dlr'], currency['dlr'])

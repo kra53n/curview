@@ -33,9 +33,9 @@ def __distrebute_currency(ask, cur):
         course_rub = course_dlr * dollar
         dlr = course_dlr * num
         rub = course_rub * num
-        return course_dlr, course_rub, dlr, rub
+        return num, course_dlr, course_rub, dlr, rub
     else:
-        return course_rub, rub
+        return num, course_rub, rub
 
 def __exec_option(option, ask):
     '''Function translate type of currency to __destrebute_currence
@@ -45,14 +45,15 @@ def __exec_option(option, ask):
         if i == option:
             name = curs[i-1]
             if name in CUR_ROW:
-                course_dlr, course_rub, dlr, rub = __distrebute_currency(ask,
+                num, course_dlr, course_rub, dlr, rub = __distrebute_currency(
+                                                                         ask,
                                                                          name)
             else:
-                course_rub, rub = __distrebute_currency(ask, name)
+                num, course_rub, rub = __distrebute_currency(ask, name)
     if name in CUR_ROW:
-        return name, course_dlr, course_rub, dlr, rub
+        return name, num, course_dlr, course_rub, dlr, rub
     else:
-        return name, course_rub, rub
+        return name, num, course_rub, rub
 
 def options(option = None, ask = 0):
     '''Function ask which value you whant pass
@@ -81,18 +82,19 @@ def typle_to_dict(data_typle):
     processing it to dictionary
     example --> typle_do_dict(options())
     '''
+    # TODO: change if on checking on type of cur
     from date import date
     data = {'date': date}
-    if len(data_typle) == 3:
+    if len(data_typle) == 4:
         # dollarm gold, sivler, palladium
         # name, course_rub, rub
-        titles = ('name', 'course_rub', 'rub')
+        titles = ('name', 'amount', 'course_rub', 'rub')
         for i in range(len(data_typle)):
             data[titles[i]] = data_typle[i]
-    if len(data_typle) == 5:
+    if len(data_typle) == 6:
         # bitcoin, ethereum
         # name, course_dlr, course_rub, dlr, rub
-        titles = ('name', 'course_dlr', 'course_rub', 'dlr', 'rub')
+        titles = ('name', 'amount', 'course_dlr', 'course_rub', 'dlr', 'rub')
         for i in range(len(data_typle)):
             data[titles[i]] = data_typle[i]
     return data
