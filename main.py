@@ -2,6 +2,7 @@ from os import system as sys
 from time import sleep
 from clear import clear
 from wwdb import wwdb
+from constants import CUR_CHOOSE_TEXT
 
 
 ### CONSTANTS
@@ -68,27 +69,7 @@ def show_courses():
 def inf_write_currency():
     '''Function print iformation of options
     '''
-    print('''What currency you whant to write?
-
-    1 - dollar
-    2 - bitcoin
-    3 - ethereum
-    4 - gold
-    5 - silver
-    6 - palladium
-    ''')
-
-def transit_data_to_sql3(data):
-    '''Funtcion takes argument(dic) from write_currency()
-    and transit this to base data with help of sqlite3
-    '''
-    import sqlite3 as sql
-    keys = ('date', 'name', 'course_rub', 'rub', 'course_dlr', 'dlr')
-    for key in keys:
-        if key in data.keys():
-            # TODO: finish this
-            print('All is work!', data[key])
-        input()
+    print(f'What currency you whant to write?\n{CUR_CHOOSE_TEXT}')
 
 def write_currency(choice):
     '''Function write kind of currency to file

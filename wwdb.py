@@ -2,6 +2,7 @@
 
 import sqlite3 as sql
 from date import exactly_time as ex_t
+from constants import CUR_ROW
 
 
 ### CONSTANTS
@@ -16,10 +17,9 @@ def text_for_creating_table(currency):
     Argument currency get type of currency for goal
     of function
     '''
-    row = ['bitcoin', 'ethereum']
     message = 'CREATE TABLE IF NOT EXISTS `{}` '.format(currency)
     message += '(`date` STRING, `course_rubles` REAL, `rubles` REAL'
-    if currency in row:
+    if currency in CUR_ROW:
         message += ', `course_dollar` REAL, `dollar` REAL'
     message += ')'
     return message
@@ -31,11 +31,10 @@ def text_for_filling_table(currency):
     Argument of currency get dic of currency with
     information
     '''
-    row = ['bitcoin', 'ethereum']
     message = 'INSERT INTO `{}` '.format(currency['name'])
     message += 'VALUES ("{}", '.format(currency['date'])
     message += '{}, {}'.format(currency['course_rub'], currency['rub'])
-    if currency['name'] in row:
+    if currency['name'] in CUR_ROW:
         message += ', {}, {}'.format(currency['course_dlr'], currency['dlr'])
     message += ')'
     return message
