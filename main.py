@@ -1,4 +1,3 @@
-from os import system as sys
 from time import sleep
 from clear import clear
 from wwdb import wwdb
