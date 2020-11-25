@@ -17,9 +17,10 @@ def get_html(url = PATH_SITE):
     try:
         html_doc = requests.get(url)
     except:
-        clear()
+        print()
         print('Check your connection!'.upper())
         input()
+        clear()
         exit()
     if html_doc.status_code != 200:
         print('Page have some problems!')

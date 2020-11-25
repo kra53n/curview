@@ -1,10 +1,18 @@
+### TODO:
+- [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
+- [ ] try avoid in get_html() in parsing.py exit()
+- [ ] make costum options and not only with terminal interface
+    - [ ] make interface for PC(using tkinter for first time)
+        - [ ] choose palette with colors
+        - [ ] make layout of widgets
+        - [ ] make widgets functionality
+    - [ ] make interface for phones
+        - [ ] make interface for android
+
+### COMPLETED
 + [x] think more about working withd data base. For example we can have one data base "curview.md"
   and different tables with years. Or wwe can have data base with numerues of year "2020"
   and tables with different currency dollar, bitcoin and e.t.c.
 - [x] think more about message in wwdb.py in wwdb(). Maybe will better put it in funcion?
-- [ ] check exception of get_html() in parsing.py. And make it better
-- [ ] make costum options and not only with terminal interface
-    - [ ] make interface for PC
-    - [ ] make interface for phones
-        - [ ] make interface for android
 - [x] in data.py with __ethereum(), __palladium() and e.t.c make one function with OPTION
+- [x] check exception of get_html() in parsing.py. And make it better
