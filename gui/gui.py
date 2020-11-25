@@ -17,12 +17,12 @@ class CurViewGui:
     def create_widgets(self):
         print('Widgets are create')
         Button(self.master,
-                             text = 'Shut up PC',
-                             command = self.shut_up_pc
-                             ).pack()
+               text = 'Shut up PC',
+               command = self.shut_up_pc
+               ).pack()
         Button(self.master,
-                           text = 'Quit',
-                           command = self.master.quit
+               text = 'Quit',
+               command = self.master.quit
         ).pack()
 
     def shut_up_pc(self):
