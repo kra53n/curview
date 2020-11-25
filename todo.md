@@ -8,7 +8,7 @@
         - [ ] make widgets functionality
     - [ ] make interface for phones
         - [ ] make interface for Android
-        - [ ] make interface for Ios
+        - [ ] make interface for ios
 
 ### COMPLETED
 + [x] think more about working withd data base. For example we can have one data base "curview.md"
