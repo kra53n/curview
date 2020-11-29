@@ -1,7 +1,7 @@
 {
-        "background": "#2C3531",
-        "background_elem_not_act": "#D1E8E2",
-        "background_elem_act": "#116466",
-        "foreground_elem_non_act": "#116466",
-        "foreground_elem_act": "#D1E8E2"
+        "backgroundApp": "#2C3531",
+        "background": "#D1E8E2",
+        "backgroundActive": "#116466",
+        "foreground": "#116466",
+        "foregroundActive": "#D1E8E2"
 }

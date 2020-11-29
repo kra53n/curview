@@ -5,16 +5,18 @@ from json import load as json_load
 class CurViewGui:
     def __init__(self, master):
         ### GENERATION OF USER INTERFACE
-        self.create_colors()
         self.master = master
         # identify width
         self.width = master.winfo_screenwidth()
         # give title
         if self.width > 400:
-            master.title('CurView - Currency view')
+            self.master.title('CurView - Currency view')
         else:
-            master.title('CurView')
-        master.configure(background = self.background)
+            self.master.title('CurView')
+        # create colors from colors.json file
+        self.create_colors()
+        # set color for backgroudn of app
+        master.configure(background = self.backgroundApp)
         # create widgets
         self.create_widgets()
 
@@ -24,19 +26,19 @@ class CurViewGui:
                text = 'Shut up PC',
                command = self.shut_up_pc,
                bd = 0,
-               background = self.background_elem_not_act,
-               activebackground = self.background_elem_act,
-               foreground = self.foreground_elem_non_act,
-               activeforeground = self.foreground_elem_act,
+               background = self.background,
+               activebackground = self.backgroundActive,
+               foreground = self.foreground,
+               activeforeground = self.foregroundActive,
                ).pack()
         Button(self.master,
                text = 'Quit',
                command = self.master.quit,
                bd = 0,
-               background = self.background_elem_not_act,
-               activebackground = self.background_elem_act,
-               foreground = self.foreground_elem_non_act,
-               activeforeground = self.foreground_elem_act,
+               background = self.background,
+               activebackground = self.backgroundActive,
+               foreground = self.foreground,
+               activeforeground = self.foregroundActive,
                ).pack()
 
     def shut_up_pc(self):
@@ -47,7 +49,6 @@ class CurViewGui:
         If you whant change colors of gui
         change colors in this file
         '''
-        # TODO: rewrite comment of funtion
         with open('colors.json', 'r') as f:
             data = json_load(f)
         return tuple(data.items())
