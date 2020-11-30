@@ -1,4 +1,4 @@
-from tkinter import Tk, Button
+from tkinter import Tk, Button, Frame
 from json import load as json_load
 
 
@@ -17,12 +17,27 @@ class CurViewGui:
         self.create_colors()
         # set color for backgroudn of app
         master.configure(background = self.backgroundApp)
+        # create frames
+        self.create_frame_menu()
+        self.create_frame_main()
         # create widgets
         self.create_widgets()
 
+    def create_frame_menu(self):
+        '''Creates menu bar frame
+        '''
+        self.frame_menu = Frame(self.master, bg = self.foregroundActive)
+        self.frame_menu.pack(side = 'left')
+
+    def create_frame_main(self):
+        '''Create frame where we can see main information
+        '''
+        self.frame_main = Frame(self.master)
+        self.frame_main.pack(side = 'top')
+
     def create_widgets(self):
         print('Widgets are create')
-        Button(self.master,
+        Button(self.frame_menu,
                text = 'Shut up PC',
                command = self.shut_up_pc,
                bd = 0,
@@ -31,7 +46,7 @@ class CurViewGui:
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
                ).pack()
-        Button(self.master,
+        Button(self.frame_main,
                text = 'Quit',
                command = self.master.quit,
                bd = 0,
