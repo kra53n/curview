@@ -29,7 +29,7 @@ class CurViewGui:
         self.frame_menu = Frame(self.master, bg = self.foreground)
         self.frame_menu.pack(side = 'left')
 
-def create_frame_main(self):
+    def create_frame_main(self):
         '''Create frame where we can see main information
         '''
         self.frame_main = Frame(self.master)
