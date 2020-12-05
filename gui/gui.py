@@ -26,17 +26,34 @@ class CurViewGui:
     def create_frame_menu(self):
         '''Creates menu bar frame
         '''
-        self.frame_menu = Frame(self.master, bg = self.foregroundActive)
+        self.frame_menu = Frame(self.master, bg = self.foreground)
         self.frame_menu.pack(side = 'left')
 
-    def create_frame_main(self):
+def create_frame_main(self):
         '''Create frame where we can see main information
         '''
         self.frame_main = Frame(self.master)
         self.frame_main.pack(side = 'top')
 
-    def create_widgets(self):
-        print('Widgets are create')
+    def create_widtgets_menu(self):
+        '''Widgets that prossessed unf frame_menu
+        '''
+        Button(self.frame_menu,
+               text = 'Main',
+               bd = 0,
+               background = self.background,
+               activebackground = self.backgroundActive,
+               foreground = self.foreground,
+               activeforeground = self.foregroundActive,
+               ).pack()
+        Button(self.frame_menu,
+               text = 'Settings',
+               bd = 0,
+               background = self.background,
+               activebackground = self.backgroundActive,
+               foreground = self.foreground,
+               activeforeground = self.foregroundActive,
+               ).pack()
         Button(self.frame_menu,
                text = 'Shut up PC',
                command = self.shut_up_pc,
@@ -46,6 +63,11 @@ class CurViewGui:
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
                ).pack()
+
+    def create_widgets(self):
+        '''Function create widgets
+        '''
+        self.create_widtgets_menu()
         Button(self.frame_main,
                text = 'Quit',
                command = self.master.quit,
