@@ -27,13 +27,13 @@ class CurViewGui:
         '''Creates menu bar frame
         '''
         self.frame_menu = Frame(self.master, bg = self.foreground)
-        self.frame_menu.pack(side = 'left')
+        self.frame_menu.pack(side = 'left', fill = 'y', ipadx = 4)
 
     def create_frame_main(self):
         '''Create frame where we can see main information
         '''
         self.frame_main = Frame(self.master)
-        self.frame_main.pack(side = 'top')
+        self.frame_main.pack(expand = 1)
 
     def create_widtgets_menu(self):
         '''Widgets that prossessed unf frame_menu
