@@ -6,6 +6,10 @@ class CurViewGui:
     def __init__(self, master):
         ### GENERATION OF USER INTERFACE
         self.master = master
+        # set geomtry of interface
+        self.master.geometry('768x432')
+        # set size after that we can`t change the size of window
+        self.master.minsize(768, 432)
         # identify width
         self.width = master.winfo_screenwidth()
         # give title
