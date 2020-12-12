@@ -3,7 +3,8 @@
 - [ ] try avoid in get_html() in parsing.py exit()
 - [ ] make costum options and not only with terminal interface
     - [ ] make interface for PC(using tkinter for first time)
-        - [ ] use this site --> https://tkdocs.com/tutorial/index.html
+        - [ ] use this site --> https://tkdocs.com/tutorial/index.html and delete iconbitmap
+        - [ ] draw iconbitmap
         - [x] choose palette with colors
         - [ ] make layout of widgets
         - [ ] make widgets functionality
