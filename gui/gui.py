@@ -1,4 +1,4 @@
-from tkinter import Tk, Button, Frame
+from tkinter import Tk, Button, Frame, Label, Entry
 from json import load as json_load
 
 
@@ -39,9 +39,18 @@ class CurViewGui:
         self.frame_main = Frame(self.master)
         self.frame_main.pack(expand = 1)
 
-    def create_widtgets_menu(self):
-        '''Widgets that prossessed unf frame_menu
+    def create_widgets_menu(self):
+        '''Widgets that prossessed inf frame_menu
         '''
+        Button(self.frame_menu,
+               text = 'Add',
+               bd = 0,
+               background = self.background,
+               activebackground = self.backgroundActive,
+               foreground = self.foreground,
+               activeforeground = self.foregroundActive,
+               command = self.add_inf,
+               ).pack(fill = 'x', padx = 10, pady = 3)
         Button(self.frame_menu,
                text = 'Main',
                bd = 0,
@@ -49,7 +58,7 @@ class CurViewGui:
                activebackground = self.backgroundActive,
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
-               ).pack()
+               ).pack(fill = 'x', padx = 10, pady = 3)
         Button(self.frame_menu,
                text = 'Settings',
                bd = 0,
@@ -57,7 +66,7 @@ class CurViewGui:
                activebackground = self.backgroundActive,
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
-               ).pack()
+               ).pack(fill = 'x', padx = 10, pady = 3)
         Button(self.frame_menu,
                text = 'Shut up PC',
                command = self.shut_up_pc,
@@ -66,12 +75,12 @@ class CurViewGui:
                activebackground = self.backgroundActive,
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
-               ).pack()
+               ).pack(fill = 'x', padx = 10, pady = 3)
 
     def create_widgets(self):
         '''Function create widgets
         '''
-        self.create_widtgets_menu()
+        self.create_widgets_menu()
         Button(self.frame_main,
                text = 'Quit',
                command = self.master.quit,
@@ -81,6 +90,45 @@ class CurViewGui:
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
                ).pack()
+
+    # action functions
+    def add_inf(self):
+        '''Function create new window where user can
+        put his values
+        '''
+        # create window
+        self.add_window = Tk()
+        # set colors
+        self.add_window.configure(bg = self.backgroundApp)
+        Label(self.add_window,
+              text = 'Currency',
+              bd = 0,
+              background = self.backgroundApp,
+              foreground = self.background,
+              font = 11,
+              ).grid(row = 0, column = 0)
+        Label(self.add_window,
+              text = 'Numerues',
+              bd = 0,
+              background = self.backgroundApp,
+              foreground = self.background,
+              font = 11,
+              ).grid(row = 0, column = 1)
+        Button(self.add_window,
+               text = 'Add',
+               background = self.background,
+               activebackground = self.backgroundActive,
+               foreground = self.foreground,
+               activeforeground = self.foregroundActive,
+               font = 11,
+               bd = 0).grid(row = 0, column = 2)
+        # TODO: add options to select currency
+        self.entry_add_inf = Entry(self.add_window,
+                                   background = self.background,
+                                   foreground = self.foreground,
+                                   font = 11,
+                                   bd = 0).grid(row = 1, column = 1)
+        # TODO: write `Close` button in 1, 2 position of grid
 
     def shut_up_pc(self):
         print('Your PC already shut down')
