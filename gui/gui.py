@@ -129,6 +129,14 @@ class CurViewGui:
                                    font = 11,
                                    bd = 0).grid(row = 1, column = 1)
         # TODO: write `Close` button in 1, 2 position of grid
+        Button(self.add_window,
+               text = 'Close',
+               background = self.background,
+               activebackground = self.backgroundActive,
+               foreground = self.foreground,
+               activeforeground = self.foregroundActive,
+               font = 11,
+               bd = 0).grid(row = 1, column = 2)
 
     def shut_up_pc(self):
         print('Your PC already shut down')
