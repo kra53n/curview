@@ -105,14 +105,12 @@ class CurViewGui:
               bd = 0,
               background = self.backgroundApp,
               foreground = self.background,
-              font = 11,
               ).grid(row = 0, column = 0)
         Label(self.add_window,
               text = 'Numerues',
               bd = 0,
               background = self.backgroundApp,
               foreground = self.background,
-              font = 11,
               ).grid(row = 0, column = 1)
         Button(self.add_window,
                text = 'Add',
@@ -120,22 +118,19 @@ class CurViewGui:
                activebackground = self.backgroundActive,
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
-               font = 11,
                bd = 0).grid(row = 0, column = 2)
         # TODO: add options to select currency
         self.entry_add_inf = Entry(self.add_window,
                                    background = self.background,
                                    foreground = self.foreground,
-                                   font = 11,
                                    bd = 0).grid(row = 1, column = 1)
-        # TODO: write `Close` button in 1, 2 position of grid
         Button(self.add_window,
                text = 'Close',
                background = self.background,
                activebackground = self.backgroundActive,
                foreground = self.foreground,
                activeforeground = self.foregroundActive,
-               font = 11,
+               command = self.add_window.destroy,
                bd = 0).grid(row = 1, column = 2)
 
     def shut_up_pc(self):
@@ -149,7 +144,7 @@ class CurViewGui:
         with open('colors.json', 'r') as f:
             data = json_load(f)
         return tuple(data.items())
-    
+
     def create_colors(self, colors = load_colors()):
         '''Function create colors in __init__()
         ============================================
