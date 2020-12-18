@@ -8,6 +8,7 @@
         - [x] choose palette with colors
         - [ ] make layout of widgets
         - [ ] make widgets functionality
+        - [ ] complete add_inf window in curview/gui
     - [ ] make interface for phones
         - [ ] make interface for Android
         - [ ] make interface for ios

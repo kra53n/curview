@@ -1,4 +1,5 @@
 from tkinter import Tk, Button, Frame, Label, Entry
+from tkinter.ttk import Combobox
 from json import load as json_load
 
 
@@ -116,10 +117,11 @@ class CurViewGui:
                text = 'Add',
                background = self.background,
                activebackground = self.backgroundActive,
-               foreground = self.foreground,
+               foreground = self.backgroundApp,
                activeforeground = self.foregroundActive,
                bd = 0).grid(row = 0, column = 2)
         # TODO: add options to select currency
+        self.combox = Combobox(self.add_window).grid(row = 1, column = 0)
         self.entry_add_inf = Entry(self.add_window,
                                    background = self.background,
                                    foreground = self.foreground,
@@ -128,7 +130,7 @@ class CurViewGui:
                text = 'Close',
                background = self.background,
                activebackground = self.backgroundActive,
-               foreground = self.foreground,
+               foreground = self.backgroundApp,
                activeforeground = self.foregroundActive,
                command = self.add_window.destroy,
                bd = 0).grid(row = 1, column = 2)
