@@ -6,7 +6,7 @@ from tkinter import Tk, Label
 from json import load
 
 
-class ChclrGui:
+class HelpGui:
     def __init__(self, master):
         self.master = master
         self.master.resizable(0, 0)
@@ -32,5 +32,5 @@ def load_colors():
 
 if __name__ == '__main__':
     root = Tk()
-    gui = ChclrGui(root)
+    gui = HelpGui(root)
     root.mainloop()

@@ -20,7 +20,7 @@ class CurViewGui:
             self.master.title('CurView')
         # create colors from colors.json file
         self.create_colors()
-        # set color for backgroudn of app
+        # set color for background of app
         master.configure(background = self.backgroundApp)
         # create frames
         self.create_frame_menu()
@@ -116,9 +116,9 @@ class CurViewGui:
         Button(self.add_window,
                text = 'Add',
                background = self.background,
-               activebackground = self.backgroundActive,
+               activebackground = self.backgroundApp,
                foreground = self.backgroundApp,
-               activeforeground = self.foregroundActive,
+               activeforeground = self.background,
                bd = 0).grid(row = 0, column = 2)
         # TODO: add options to select currency
         self.combox = Combobox(self.add_window).grid(row = 1, column = 0)
@@ -129,9 +129,9 @@ class CurViewGui:
         Button(self.add_window,
                text = 'Close',
                background = self.background,
-               activebackground = self.backgroundActive,
+               activebackground = self.backgroundApp,
                foreground = self.backgroundApp,
-               activeforeground = self.foregroundActive,
+               activeforeground = self.background,
                command = self.add_window.destroy,
                bd = 0).grid(row = 1, column = 2)
 
