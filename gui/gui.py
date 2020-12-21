@@ -99,41 +99,53 @@ class CurViewGui:
         '''
         # create window
         self.add_window = Tk()
+        # paste inresize
+        self.add_window.resizable(0, 0)
+        # create frames
+        self.add_window_frame_main = Frame(self.add_window,
+                                           background = self.backgroundApp)
+        self.add_window_frame_main.pack(padx = 3, pady = 6)
         # set colors
         self.add_window.configure(bg = self.backgroundApp)
-        Label(self.add_window,
+        Label(self.add_window_frame_main,
               text = 'Currency',
               bd = 0,
               background = self.backgroundApp,
               foreground = self.background,
               ).grid(row = 0, column = 0)
-        Label(self.add_window,
+        Label(self.add_window_frame_main,
               text = 'Numerues',
               bd = 0,
               background = self.backgroundApp,
               foreground = self.background,
-              ).grid(row = 0, column = 1)
-        Button(self.add_window,
+              ).grid(row = 0, column = 1,)
+        Button(self.add_window_frame_main,
                text = 'Add',
                background = self.background,
                activebackground = self.backgroundApp,
                foreground = self.backgroundApp,
                activeforeground = self.background,
-               bd = 0).grid(row = 0, column = 2)
+               bd = 0).grid(row = 0, column = 2,
+                            sticky = 'nswe', padx = 3)
         # TODO: add options to select currency
-        self.combox = Combobox(self.add_window).grid(row = 1, column = 0)
-        self.entry_add_inf = Entry(self.add_window,
+        self.add_inf_combox = Combobox(self.add_window_frame_main).grid(
+                                                             row = 1,
+                                                             column = 0,
+                                                             padx = 3)
+        self.entry_add_inf = Entry(self.add_window_frame_main,
                                    background = self.background,
                                    foreground = self.foreground,
-                                   bd = 0).grid(row = 1, column = 1)
-        Button(self.add_window,
+                                   bd = 0).grid(row = 1, column = 1, padx = 3)
+        Button(self.add_window_frame_main,
                text = 'Close',
                background = self.background,
                activebackground = self.backgroundApp,
                foreground = self.backgroundApp,
                activeforeground = self.background,
                command = self.add_window.destroy,
-               bd = 0).grid(row = 1, column = 2)
+               bd = 0,
+               ).grid(row = 1, column = 2,
+                      sticky = 'nswe', padx = 3)
 
     def shut_up_pc(self):
         print('Your PC already shut down')

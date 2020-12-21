@@ -1,4 +1,5 @@
 ### TODO:
+- [ ] start write README.md
 - [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
 - [ ] try avoid in get_html() in parsing.py exit()
 - [ ] make costum options and not only with terminal interface
@@ -9,6 +10,7 @@
         - [ ] make layout of widgets
         - [ ] make widgets functionality
         - [ ] complete add_inf window in curview/gui
+            - [ ] complete Combobox
     - [ ] make interface for phones
         - [ ] make interface for Android
         - [ ] make interface for ios
