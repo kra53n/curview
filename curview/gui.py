@@ -1,4 +1,4 @@
-from tkinter import Tk, Button, Frame, Label, Entry
+from tkinter import Tk, Button, Frame, Label, Entry, StringVar
 from tkinter.ttk import Combobox
 from json import load as json_load
 
@@ -97,6 +97,9 @@ class CurViewGui:
         '''Function create new window where user can
         put his values
         '''
+        from api.constants import CURS
+        # interaction with interface
+        self.add_window_countryvar = StringVar()
         # create window
         self.add_window = Tk()
         # paste inresize
@@ -128,14 +131,18 @@ class CurViewGui:
                bd = 0).grid(row = 0, column = 2,
                             sticky = 'nswe', padx = 3)
         # TODO: add options to select currency
-        self.add_inf_combox = Combobox(self.add_window_frame_main).grid(
-                                                             row = 1,
-                                                             column = 0,
-                                                             padx = 3)
+        self.add_inf_combobox = Combobox(self.add_window_frame_main,
+            textvariable = self.add_window_countryvar,
+            values = CURS,
+            state = 'readonly'
+            )
+        self.add_inf_combobox.grid(row = 1, column = 0, padx = 3)
+        self.add_inf_combobox.current(0)
         self.entry_add_inf = Entry(self.add_window_frame_main,
                                    background = self.background,
                                    foreground = self.foreground,
-                                   bd = 0).grid(row = 1, column = 1, padx = 3)
+                                   bd = 0)
+        self.entry_add_inf.grid(row = 1, column = 1, padx = 3)
         Button(self.add_window_frame_main,
                text = 'Close',
                background = self.background,
