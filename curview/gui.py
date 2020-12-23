@@ -97,6 +97,7 @@ class CurViewGui:
         '''Function create new window where user can
         put his values
         '''
+        # TODO: here use api.CurViewApi
         from api.constants import CURS
         # interaction with interface
         self.add_window_countryvar = StringVar()
@@ -128,9 +129,9 @@ class CurViewGui:
                activebackground = self.backgroundApp,
                foreground = self.backgroundApp,
                activeforeground = self.background,
+               command = self.add_inf_cmd,
                bd = 0).grid(row = 0, column = 2,
                             sticky = 'nswe', padx = 3)
-        # TODO: add options to select currency
         self.add_inf_combobox = Combobox(self.add_window_frame_main,
             textvariable = self.add_window_countryvar,
             values = CURS,
@@ -153,6 +154,10 @@ class CurViewGui:
                bd = 0,
                ).grid(row = 1, column = 2,
                       sticky = 'nswe', padx = 3)
+
+    def add_inf_cmd(self):
+        # TODO: make doc for this func
+        pass
 
     def shut_up_pc(self):
         print('Your PC already shut down')

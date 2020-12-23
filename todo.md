@@ -1,4 +1,5 @@
 ### TODO:
+### -  [ ] EXTRA: rewrite CurViewApi for easy to use it
 - [x] start write README.md
 - [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
 - [ ] try avoid in get_html() in parsing.py exit()
