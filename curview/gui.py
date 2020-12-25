@@ -103,6 +103,8 @@ class CurViewGui:
         self.add_window_countryvar = StringVar()
         # create window
         self.add_window = Tk()
+        # create title of window
+        self.add_window.title('Add')
         # paste inresize
         self.add_window.resizable(0, 0)
         # create frames
