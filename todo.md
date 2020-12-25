@@ -11,7 +11,7 @@
         - [ ] make layout of widgets
         - [ ] make widgets functionality
         - [ ] complete add_inf window in curview/gui
-            - [ ] complete Combobox
+            - [x] complete Combobox
     - [ ] make interface for phones
         - [ ] make interface for Android
         - [ ] make interface for ios
