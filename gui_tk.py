@@ -169,7 +169,7 @@ class CurViewGui:
         If you whant change colors of gui
         change colors in this file
         '''
-        with open('colors.json', 'r') as f:
+        with open('assets/colors.json', 'r') as f:
             data = json_load(f)
         return tuple(data.items())
 
