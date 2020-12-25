@@ -1,5 +1,8 @@
 ### TODO:
-- [ ] EXTRA: rewrite CurViewApi for easy to use it
+- [ ] write api
+    ```sh
+    Api must connect with others modules and make working with all data very easy and understandable
+    ```
 - [x] start write README.md
 - [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
 - [ ] try avoid in get_html() in parsing.py exit()
