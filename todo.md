@@ -4,6 +4,7 @@
     Api must connect with others modules and make working with all data very easy and understandable
     ```
 - [x] start write README.md
+- [ ] make in assets/help.py buttons with commands
 - [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
 - [ ] try avoid in get_html() in parsing.py exit()
 - [ ] make costum options and not only with terminal interface
