@@ -1,6 +1,12 @@
-from parsing import dollar, bitcoin, ethereum, gold, silver, palladium
-from clear import clear
-from constants import CUR_ROW, CUR_CHOOSE_TEXT
+from api.parsing import CUR_PARS, exec_parsing
+from api.clear import clear
+from api.constants import CUR_ROW, CUR_CHOOSE_TEXT
+
+
+### INITIALIZE CURRENCY
+cur_vals exec_parsing()
+for i in range(len(CUR_PARS)):
+    exec('{} = {}'.format(CUR_PARS[i][0], cur_vals[i]))
 
 
 ### FUNCTIONS

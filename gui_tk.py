@@ -115,7 +115,7 @@ class CurViewGui:
         put his values
         '''
         # TODO: here use api.CurViewApi
-        from api.curview_api import list_curs_name
+        from curview_api import list_curs_name
         # interaction with interface
         self.add_window_countryvar = StringVar()
         # create window
