@@ -1,13 +1,20 @@
 from bs4 import BeautifulSoup
 import requests
 from sys import exit
-from clear import clear
 
 
 ### CONSTANTS
 PATH_SITE = 'https://форум-трейдеров.рф/chart-online.php'
 PATH_SITE_CRYPTO = 'https://www.banknn.ru/kurs-kriptovalyut'
 PATH_SITE_METAL = 'https://cbr.ru/hd_base/metall/metall_base_new/'
+CUR_PARS = (
+        ('dollar', PATH_SITE, 'span', 11),
+        ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
+        ('ethereum', PATH_SITE_CRYPTO, 'td', 9, 'y'),
+        ('gold', PATH_SITE_METAL, 'td', 2, 'y'),
+        ('silver', PATH_SITE_METAL, 'td', 3, 'y'),
+        ('palladium', PATH_SITE_METAL, 'td', 5, 'y')
+)
 
 
 ### FUNCTIONS
@@ -20,7 +27,6 @@ def get_html(url = PATH_SITE):
         print()
         print('Check your connection!'.upper())
         input()
-        clear()
         exit()
     if html_doc.status_code != 200:
         print('Page have some problems!')
@@ -54,9 +60,7 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
 
 
 ### OUTPUT
-dollar = course_parser(PATH_SITE, 'span', 11)
-bitcoin = course_parser(PATH_SITE_CRYPTO, 'td', 4, 'y')
-ethereum = course_parser(PATH_SITE_CRYPTO, 'td', 9, 'y')
-gold = course_parser(PATH_SITE_METAL, 'td', 2, 'y')
-silver = course_parser(PATH_SITE_METAL, 'td', 3, 'y')
-palladium = course_parser(PATH_SITE_METAL, 'td', 5, 'y')
+'''Output everything what we have in CUR_PARS
+'''
+for i in CUR_PARS:
+    exec('{} = course_parser{}'.format(i[0], i[1:]))
