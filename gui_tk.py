@@ -3,6 +3,46 @@ from tkinter.ttk import Combobox
 from json import load as json_load
 
 
+# ------------------------------------------------------ #
+# ------------- Cofnigure tkinter elements ------------- #
+# ------------------------------------------------------ #
+class ButtonMenu(Button):
+    '''Set default Button from tkinter our settings
+    for menu
+    '''
+    def __init__(self, *args, **kwargs):
+        self.create_colors()
+        super().__init__(*args,
+                         **kwargs,
+                         background = self.background,
+                         activebackground = self.backgroundActive,
+                         foreground = self.foreground,
+                         activeforeground = self.foregroundActive,
+                         bd = 0,
+                         )
+
+    def load_colors():
+        '''Colors are import from colors.json.
+        If you whant change colors of gui
+        change colors in this file
+        '''
+        with open('assets/colors.json', 'r') as f:
+            data = json_load(f)
+        return tuple(data.items())
+
+    def create_colors(self, colors = load_colors()):
+        '''Function create colors in __init__()
+        ============================================
+        Arg --> colors from ('background', '#75642')
+        make `self.background = '#75642'`
+        '''
+        for i in colors:
+            exec('self.{} = "{}"'.format(i[0], i[1]))
+
+
+# --------------------------------------------------- #
+# ----------------------- GUI ----------------------- #
+# --------------------------------------------------- #
 class CurViewGui:
     def __init__(self, master):
         ### GENERATION OF USER INTERFACE
@@ -43,23 +83,17 @@ class CurViewGui:
     def create_widgets_menu(self):
         '''Widgets that prossessed inf frame_menu
         '''
-        Button(self.frame_menu,
-               text = 'Add',
-               bd = 0,
-               background = self.background,
-               activebackground = self.backgroundActive,
-               foreground = self.foreground,
-               activeforeground = self.foregroundActive,
-               command = self.add_inf,
-               ).pack(fill = 'x', padx = 10, pady = 3)
-        Button(self.frame_menu,
-               text = 'Settings',
-               bd = 0,
-               background = self.background,
-               activebackground = self.backgroundActive,
-               foreground = self.foreground,
-               activeforeground = self.foregroundActive,
-               ).pack(fill = 'x', padx = 10, pady = 3)
+        ButtonMenu(self.frame_menu,
+                   text = 'Add',
+                   command = self.add_inf,
+                   ).pack(fill = 'x', padx = 10, pady = 3)
+        ButtonMenu(self.frame_menu,
+                   text = 'Quit',
+                   command = self.master.quit,
+                   ).pack(fill = 'x', padx = 10, pady = 3)
+        ButtonMenu(self.frame_menu,
+                   text = 'Settings',
+                   ).pack(fill = 'x', padx = 10, pady = 3)
 
     def create_widgets(self):
         '''Function create widgets

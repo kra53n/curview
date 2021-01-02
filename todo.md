@@ -5,6 +5,7 @@
     ```
 - [x] start write README.md
 - [ ] make in assets/help.py buttons with commands
+- [ ] solve problem with load_color and create_colors in gui_tk.py
 - [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
 - [ ] try avoid in get_html() in parsing.py exit()
 - [ ] make costum options and not only with terminal interface
