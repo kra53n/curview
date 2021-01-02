@@ -1,8 +1,6 @@
 ### TODO:
-- [ ] write api
-    ```sh
-    Api must connect with others modules and make working with all data very easy and understandable
-    ```
+- [ ] rewrite data.py
+- [ ] write api ```Api must connect with others modules and make working with all data very easy and understandable```
 - [x] start write README.md
 - [ ] make in assets/help.py buttons with commands
 - [ ] solve problem with load_color and create_colors in gui_tk.py
