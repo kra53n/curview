@@ -7,6 +7,7 @@ from sys import exit
 PATH_SITE = 'https://форум-трейдеров.рф/chart-online.php'
 PATH_SITE_CRYPTO = 'https://www.banknn.ru/kurs-kriptovalyut'
 PATH_SITE_METAL = 'https://cbr.ru/hd_base/metall/metall_base_new/'
+# TODO: read PEP8 about thing below
 CUR_PARS = (
         ('dollar', PATH_SITE, 'span', 11),
         ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
@@ -57,9 +58,14 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
                 currency = check_signs(currency)
     return float(currency)
 
-
-### OUTPUT
-'''Output everything what we have in CUR_PARS
-'''
-for i in CUR_PARS:
-    exec('{} = course_parser{}'.format(i[0], i[1:]))
+def exec_parsing():
+    '''Function parse currency1
+    '''
+    mes_return = ''
+    for i in CUR_PARS:
+        if i[0] != CUR_PARS[0][0]:
+            mes_return += ', {}'.format(i[0])
+        else:
+            mes_return += CUR_PARS[0][0]
+        exec('{} = course_parser{}'.format(i[0], i[1:]))
+    return eval(mes_return)
