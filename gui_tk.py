@@ -81,7 +81,7 @@ class CurViewGui:
         put his values
         '''
         # TODO: here use api.CurViewApi
-        from api.constants import CURS
+        from api.curview_api import list_curs_name_gui
         # interaction with interface
         self.add_window_countryvar = StringVar()
         # create window
@@ -119,7 +119,7 @@ class CurViewGui:
                             sticky = 'nswe', padx = 3)
         self.add_inf_combobox = Combobox(self.add_window_frame_main,
             textvariable = self.add_window_countryvar,
-            values = CURS,
+            values = list_curs_name_gui(),
             state = 'readonly'
             )
         self.add_inf_combobox.grid(row = 1, column = 0, padx = 3)
