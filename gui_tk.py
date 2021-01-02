@@ -137,7 +137,7 @@ class CurViewGui:
               foreground = self.background,
               ).grid(row = 0, column = 0)
         Label(self.add_window_frame_main,
-              text = 'Numerues',
+              text = 'Amount',
               bd = 0,
               background = self.backgroundApp,
               foreground = self.background,
@@ -176,7 +176,10 @@ class CurViewGui:
 
     def add_inf_cmd(self):
         # TODO: make doc for this func
-        pass
+        from curview_api import cur_put_db
+        cur = str(self.add_inf_combobox.get())
+        amount = float(self.entry_add_inf.get())
+        cur_put_db(cur, amount)
 
     def shut_up_pc(self):
         print('Your PC already shut down')
