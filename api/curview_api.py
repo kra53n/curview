@@ -8,7 +8,4 @@ def list_curs_name_gui():
     '''This funcion return tuple of curs with their names
     '''
     from api.parsing import CUR_PARS
-    names = []
-    for i in CUR_PARS:
-        names.append(i[0])
-    return names
+    return [i[0] for i in CUR_PARS]
