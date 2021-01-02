@@ -1,4 +1,7 @@
+# CurView - Currency View
 ## Goal
+#### Make service that will help controle finance and benefits of it
+## Requirements
 ```sh
-Make service that will help controle finance and benefits of it
+pip install -r requirements
 ```
