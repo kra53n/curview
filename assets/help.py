@@ -4,6 +4,7 @@ Help to choose color for gui
 
 from tkinter import Tk, Button
 from json import load
+from xerox import copy as copy_clipboard
 
 
 class HelpGui:
@@ -22,6 +23,8 @@ class HelpGui:
                    background = m[i][1],
                    foreground = '#111',
                    activebackground = '#111',
+                   # not working
+                   command = lambda: copy_clipboard('self.' + m[i][0]),
                    ).pack(fill = 'x', ipady = 10, pady = 2)
 
 
