@@ -20,24 +20,6 @@ class ButtonMenu(Button):
                          bd = 0,
                          )
 
-    def load_colors():
-        '''Colors are import from colors.json.
-        If you whant change colors of gui
-        change colors in this file
-        '''
-        with open('assets/colors.json', 'r') as f:
-            data = json_load(f)
-        return tuple(data.items())
-
-    def create_colors(self, colors = load_colors()):
-        '''Function create colors in __init__()
-        ============================================
-        Arg --> colors from ('background', '#75642')
-        make `BACKGROUND = '#75642'`
-        '''
-        for i in colors:
-            exec('self.{} = "{}"'.format(i[0], i[1]))
-
 
 # --------------------------------------------------- #
 # ----------------------- GUI ----------------------- #
