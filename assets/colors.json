@@ -1,7 +1,7 @@
 {
-        "backgroundApp": "#2C3531",
-        "background": "#D1E8E2",
-        "backgroundActive": "#116466",
-        "foreground": "#116466",
-        "foregroundActive": "#D1E8E2"
+        "BACKGROUNDAPP": "#2C3531",
+        "BACKGROUND": "#D1E8E2",
+        "BACKGROUNDACTIVE": "#116466",
+        "FOREGROUND": "#116466",
+        "FOREGROUNDACTIVE": "#D1E8E2"
 }

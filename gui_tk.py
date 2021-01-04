@@ -11,13 +11,12 @@ class ButtonMenu(Button):
     for menu
     '''
     def __init__(self, *args, **kwargs):
-        self.create_colors()
         super().__init__(*args,
                          **kwargs,
-                         background = self.background,
-                         activebackground = self.backgroundActive,
-                         foreground = self.foreground,
-                         activeforeground = self.foregroundActive,
+                         background = BACKGROUND,
+                         activebackground = BACKGROUNDACTIVE,
+                         foreground = FOREGROUND,
+                         activeforeground = FOREGROUNDACTIVE,
                          bd = 0,
                          )
 
@@ -34,7 +33,7 @@ class ButtonMenu(Button):
         '''Function create colors in __init__()
         ============================================
         Arg --> colors from ('background', '#75642')
-        make `self.background = '#75642'`
+        make `BACKGROUND = '#75642'`
         '''
         for i in colors:
             exec('self.{} = "{}"'.format(i[0], i[1]))
@@ -58,10 +57,8 @@ class CurViewGui:
             self.master.title('CurView - Currency view')
         else:
             self.master.title('CurView')
-        # create colors from colors.json file
-        self.create_colors()
         # set color for background of app
-        master.configure(background = self.backgroundApp)
+        master.configure(background = BACKGROUNDAPP)
         # create frames
         self.create_frame_menu()
         self.create_frame_main()
@@ -71,7 +68,7 @@ class CurViewGui:
     def create_frame_menu(self):
         '''Creates menu bar frame
         '''
-        self.frame_menu = Frame(self.master, bg = self.foreground)
+        self.frame_menu = Frame(self.master, bg = FOREGROUND)
         self.frame_menu.pack(side = 'left', fill = 'y', ipadx = 4)
 
     def create_frame_main(self):
@@ -103,10 +100,10 @@ class CurViewGui:
                text = 'Quit',
                command = self.master.quit,
                bd = 0,
-               background = self.background,
-               activebackground = self.backgroundActive,
-               foreground = self.foreground,
-               activeforeground = self.foregroundActive,
+               background = BACKGROUND,
+               activebackground = BACKGROUNDACTIVE,
+               foreground = FOREGROUND,
+               activeforeground = FOREGROUNDACTIVE,
                ).pack()
 
     # action functions
@@ -126,28 +123,28 @@ class CurViewGui:
         self.add_window.resizable(0, 0)
         # create frames
         self.add_window_frame_main = Frame(self.add_window,
-                                           background = self.backgroundApp)
+                                           background = BACKGROUNDAPP)
         self.add_window_frame_main.pack(padx = 3, pady = 6)
         # set colors
-        self.add_window.configure(bg = self.backgroundApp)
+        self.add_window.configure(bg = BACKGROUNDAPP)
         Label(self.add_window_frame_main,
               text = 'Currency',
               bd = 0,
-              background = self.backgroundApp,
-              foreground = self.background,
+              background = BACKGROUNDAPP,
+              foreground = BACKGROUND,
               ).grid(row = 0, column = 0)
         Label(self.add_window_frame_main,
               text = 'Amount',
               bd = 0,
-              background = self.backgroundApp,
-              foreground = self.background,
+              background = BACKGROUNDAPP,
+              foreground = BACKGROUND,
               ).grid(row = 0, column = 1,)
         Button(self.add_window_frame_main,
                text = 'Add',
-               background = self.background,
-               activebackground = self.backgroundApp,
-               foreground = self.backgroundApp,
-               activeforeground = self.background,
+               background = BACKGROUND,
+               activebackground = BACKGROUNDAPP,
+               foreground = BACKGROUNDAPP,
+               activeforeground = BACKGROUND,
                command = self.add_inf_cmd,
                bd = 0).grid(row = 0, column = 2,
                             sticky = 'nswe', padx = 3)
@@ -159,16 +156,16 @@ class CurViewGui:
         self.add_inf_combobox.grid(row = 1, column = 0, padx = 3)
         self.add_inf_combobox.current(0)
         self.entry_add_inf = Entry(self.add_window_frame_main,
-                                   background = self.background,
-                                   foreground = self.foreground,
+                                   background = BACKGROUND,
+                                   foreground = FOREGROUND,
                                    bd = 0)
         self.entry_add_inf.grid(row = 1, column = 1, padx = 3)
         Button(self.add_window_frame_main,
                text = 'Close',
-               background = self.background,
-               activebackground = self.backgroundApp,
-               foreground = self.backgroundApp,
-               activeforeground = self.background,
+               background = BACKGROUND,
+               activebackground = BACKGROUNDAPP,
+               foreground = BACKGROUNDAPP,
+               activeforeground = BACKGROUND,
                command = self.add_window.destroy,
                bd = 0,
                ).grid(row = 1, column = 2,
@@ -184,26 +181,16 @@ class CurViewGui:
     def shut_up_pc(self):
         print('Your PC already shut down')
 
-    def load_colors():
-        '''Colors are import from colors.json.
-        If you whant change colors of gui
-        change colors in this file
-        '''
-        with open('assets/colors.json', 'r') as f:
-            data = json_load(f)
-        return tuple(data.items())
-
-    def create_colors(self, colors = load_colors()):
-        '''Function create colors in __init__()
-        ============================================
-        Arg --> colors from ('background', '#75642')
-        make `self.background = '#75642'`
-        '''
-        for i in colors:
-            exec('self.{} = "{}"'.format(i[0], i[1]))
-
 
 if __name__ == '__main__':
+    # ------------------------------------------- #
+    # ---- START - INITIALIZE - COLORS ---------- #
+    with open("assets/colors.json", 'r') as f:
+        data = json_load(f)
+    for i in data.items():
+        exec("{} = '{}'".format(i[0], i[1]))
+    # ------ END - INITIALIZE - COLORS -  ------- #
+    # ------------------------------------------- #
     root = Tk()
     gui = CurViewGui(root)
     root.mainloop()
