@@ -7,15 +7,13 @@ from sys import exit
 PATH_SITE = 'https://форум-трейдеров.рф/chart-online.php'
 PATH_SITE_CRYPTO = 'https://www.banknn.ru/kurs-kriptovalyut'
 PATH_SITE_METAL = 'https://cbr.ru/hd_base/metall/metall_base_new/'
-# TODO: read PEP8 about thing below
-CUR_PARS = (
-        ('dollar', PATH_SITE, 'span', 11),
-        ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
-        ('ethereum', PATH_SITE_CRYPTO, 'td', 9, 'y'),
-        ('gold', PATH_SITE_METAL, 'td', 2, 'y'),
-        ('silver', PATH_SITE_METAL, 'td', 3, 'y'),
-        ('palladium', PATH_SITE_METAL, 'td', 5, 'y')
-)
+CUR_PARS = (('dollar', PATH_SITE, 'span', 11),
+            ('gold', PATH_SITE_METAL, 'td', 2, 'y'),
+            ('silver', PATH_SITE_METAL, 'td', 3, 'y'),
+            ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
+            ('ethereum', PATH_SITE_CRYPTO, 'td', 9, 'y'),
+            ('palladium', PATH_SITE_METAL, 'td', 5, 'y')
+            )
 
 
 ### FUNCTIONS
