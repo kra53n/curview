@@ -30,6 +30,8 @@ class CurViewGui:
         self.master = master
         # set geomtry of interface
         self.master.geometry('768x432')
+        # set icon
+        self.master.iconbitmap('assets/lightning.ico')
         # set size after that we can`t change the size of window
         self.master.minsize(768, 432)
         # identify width
@@ -52,7 +54,6 @@ class CurViewGui:
         '''
         self.frame_menu = Frame(self.master, bg = FOREGROUND)
         self.frame_menu.pack(side = 'left', fill = 'y', ipadx = 4)
-
     def create_frame_main(self):
         '''Create frame where we can see main information
         '''
@@ -101,6 +102,8 @@ class CurViewGui:
         self.add_window = Tk()
         # create title of window
         self.add_window.title('Add')
+        # set icon
+        self.add_window.iconbitmap('assets/lightning.ico')
         # paste inresize
         self.add_window.resizable(0, 0)
         # create frames
