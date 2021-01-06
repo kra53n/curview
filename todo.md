@@ -1,2 +1,2 @@
 ### TODO:
-- [ ] test icon on Linux
+- [x] test icon on Linux

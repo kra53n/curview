@@ -1,4 +1,4 @@
-from tkinter import Tk, Button, Frame, Label, Entry, StringVar
+from tkinter import Tk, Button, Frame, Label, Entry, StringVar, PhotoImage
 from tkinter.ttk import Combobox
 from json import load as json_load
 
@@ -31,7 +31,8 @@ class CurViewGui:
         # set geomtry of interface
         self.master.geometry('768x432')
         # set icon
-        self.master.iconbitmap('assets/lightning.ico')
+        self.master.call('wm', 'iconphoto',
+                         root._w, PhotoImage(file='assets/lightning.png'))
         # set size after that we can`t change the size of window
         self.master.minsize(768, 432)
         # identify width
@@ -103,7 +104,8 @@ class CurViewGui:
         # create title of window
         self.add_window.title('Add')
         # set icon
-        self.add_window.iconbitmap('assets/lightning.ico')
+        self.add_window.call('wm', 'iconphoto',
+                             root._w, PhotoImage(file='lightning.png'))
         # paste inresize
         self.add_window.resizable(0, 0)
         # create frames
