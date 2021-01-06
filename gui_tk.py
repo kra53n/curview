@@ -1,4 +1,5 @@
 from tkinter import Tk, Button, Frame, Label, Entry, StringVar, PhotoImage
+from tkinter import PhotoImage as PhotoImage1
 from tkinter.ttk import Combobox
 from json import load as json_load
 
@@ -31,8 +32,8 @@ class CurViewGui:
         # set geomtry of interface
         self.master.geometry('768x432')
         # set icon
-        self.master.call('wm', 'iconphoto',
-                         root._w, PhotoImage(file='assets/lightning.png'))
+        # first argument mean that tk will use it for children too
+        self.master.iconphoto(True, PhotoImage(file='assets/lightning.png'))
         # set size after that we can`t change the size of window
         self.master.minsize(768, 432)
         # identify width
@@ -44,9 +45,11 @@ class CurViewGui:
             self.master.title('CurView')
         # set color for background of app
         master.configure(background = BACKGROUNDAPP)
+
         # create frames
         self.create_frame_menu()
         self.create_frame_main()
+
         # create widgets
         self.create_widgets()
 
@@ -103,9 +106,6 @@ class CurViewGui:
         self.add_window = Tk()
         # create title of window
         self.add_window.title('Add')
-        # set icon
-        self.add_window.call('wm', 'iconphoto',
-                             root._w, PhotoImage(file='lightning.png'))
         # paste inresize
         self.add_window.resizable(0, 0)
         # create frames
