@@ -1,4 +1,5 @@
 ### TODO:
+- [ ] some changes
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
       about choose cancle, remove, add
 - [ ] make in assets/help.py buttons with commands that work normal
