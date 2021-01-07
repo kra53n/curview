@@ -8,6 +8,7 @@
 - [ ] make costum options and not only with terminal interface
     - [ ] make interface for PC(using tkinter for first time)
         - [ ] make set of children windows near parent
+        - [ ] make structure of gui like construction that consist from small details to big
     - [ ] make interface for phones
         - [ ] make interface for Android
         - [ ] make interface for ios
