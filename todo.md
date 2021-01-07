@@ -2,7 +2,6 @@
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
       about choose cancle, remove, add
 - [ ] make in assets/help.py buttons with commands that work normal
-- [x] solve problem with load_color and create_colors in gui_tk.py
 - [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
 - [ ] try avoid in get_html() in parsing.py exit()
 - [ ] make costum options and not only with terminal interface
@@ -14,6 +13,7 @@
         - [ ] make interface for ios
 
 ### COMPLETED
+- [x] solve problem with load_color and create_colors in gui_tk.py
 - [x] draw iconbitmap
 - [x] test icon on Linux
 - [x] think more about working withd data base. For example we can have one data base "curview.md"
