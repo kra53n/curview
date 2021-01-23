@@ -1,8 +1,8 @@
 # WWDB - WORK WITH DATA BASE
 
 import sqlite3 as sql
-from api.date import exactly_time as ex_t
-from api.constants import CUR_ROW
+from .date import exactly_time as ex_t
+from .constants import CUR_ROW
 
 
 ### CONSTANTS

@@ -97,8 +97,7 @@ class CurViewGui:
         '''Function create new window where user can
         put his values
         '''
-        # TODO: here use api.CurViewApi
-        from curview_api import list_curs_name
+        from core import list_curs_name
         # interaction with interface
         self.add_window_countryvar = StringVar()
         # create window
@@ -159,7 +158,7 @@ class CurViewGui:
 
     def add_inf_cmd(self):
         # TODO: make doc for this func
-        from curview_api import cur_put_db
+        from core import cur_put_db
         cur = str(self.add_inf_combobox.get())
         amount = float(self.entry_add_inf.get())
         cur_put_db(cur, amount)

@@ -1,4 +1,8 @@
 ### TODO:
+- [ ] check structer of core
+- [ ] make better structure of code
+- [ ] choose tools for developing desktop interface
+
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
       about choose cancle, remove, add
 - [ ] make in assets/help.py buttons with commands that work normal
@@ -6,8 +10,7 @@
 - [ ] try avoid in get_html() in parsing.py exit()
 - [ ] make costum options and not only with terminal interface
     - [ ] make interface for PC(using tkinter for first time)
-        - [ ] make set of children windows near parent
-        - [ ] make structure of gui like construction that consist from small details to big
+        - [ ] check setting of children windows near parent
     - [ ] make interface for phones
         - [ ] make interface for Android
         - [ ] make interface for ios
