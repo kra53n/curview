@@ -1,13 +1,11 @@
 ### TODO:
-- [ ] check structer of core
-- [ ] make better structure of code
 - [ ] choose tools for developing desktop interface
 
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
       about choose cancle, remove, add
 - [ ] make in assets/help.py buttons with commands that work normal
-- [ ] make own class of exception in get_html() in parsing.py that will print 'ConnetcionError'
-- [ ] try avoid in get_html() in parsing.py exit()
+- [ ] make own class of exception in get\_html() in parsing.py that will print 'ConnetcionError'
+- [ ] try avoid in get\_html() in parsing.py exit()
 - [ ] make costum options and not only with terminal interface
     - [ ] make interface for PC(using tkinter for first time)
         - [ ] check setting of children windows near parent
@@ -16,7 +14,9 @@
         - [ ] make interface for ios
 
 ### COMPLETED
-- [x] solve problem with load_color and create_colors in gui_tk.py
+- [x] check structer of core
+- [x] make better structure of code
+- [x] solve problem with load\_color and create\_colors in gui\_tk.py
 - [x] draw iconbitmap
 - [x] test icon on Linux
 - [x] think more about working withd data base. For example we can have one data base "curview.md"
