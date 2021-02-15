@@ -1,7 +1,7 @@
-from api.parsing import CUR_PARS, exec_parsing
-from api.clear import clear
-from api.constants import CUR_ROW
-from api.date import date
+from .parsing import CUR_PARS, exec_parsing
+from .clear import clear
+from .constants import CUR_ROW
+from .date import date
 
 
 ### INITIALIZE CURRENCY
