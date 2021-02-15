@@ -1,5 +1,14 @@
-from tkinter import Tk, Button, Frame, Label, Entry, StringVar, PhotoImage
+from tkinter import (
+    Tk,
+    Button,
+    Frame,
+    Label,
+    Entry,
+    StringVar,
+    PhotoImage,
+)
 from tkinter.ttk import Combobox
+
 from json import load as json_load
 
 
