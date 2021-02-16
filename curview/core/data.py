@@ -1,5 +1,4 @@
 from .parsing import CUR_PARS, exec_parsing
-from .clear import clear
 from .constants import CUR_ROW
 from .date import date
 
