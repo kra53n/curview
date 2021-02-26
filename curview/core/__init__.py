@@ -1,9 +1,11 @@
-'''Api of Curview
-Goal --> make easy requests from gui
-'''
+# currencies that have difference btw other(bit and dlr)
+# other currency have less details
+CUR_ROW = (
+    'ethereum',
+    'bitcoin'
+)
 
 
-### FUNCTIONS
 def list_curs_name():
     '''This funcion return tuple of curs with their names
     '''
