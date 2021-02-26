@@ -2,7 +2,7 @@
 
 import sqlite3 as sql
 from .date import exactly_time as ex_t
-from .constants import CUR_ROW
+from .__init__ import CUR_ROW
 
 
 ### CONSTANTS

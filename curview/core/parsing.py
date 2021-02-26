@@ -1,5 +1,6 @@
 from bs4 import BeautifulSoup
 import requests
+
 from sys import exit
 
 
@@ -17,7 +18,7 @@ CUR_PARS = (
     # cryptocurrency
     ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
     ('ethereum', PATH_SITE_CRYPTO, 'td', 9, 'y'),
-    )
+)
 
 
 ### FUNCTIONS
