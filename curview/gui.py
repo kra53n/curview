@@ -9,7 +9,7 @@ from tkinter import (
 )
 from tkinter.ttk import Combobox
 
-from json import load as json_load
+from yaml import safe_load as yaml_safe_load
 
 
 # ------------------------------------------------------ #
@@ -179,10 +179,10 @@ class CurViewGui:
 if __name__ == '__main__':
     # ------------------------------------------- #
     # ---- START - INITIALIZE - COLORS ---------- #
-    with open("assets/colors.json", 'r') as f:
-        data = json_load(f)
+    with open("assets/colors.yaml", 'r') as f:
+        data = yaml_safe_load(f)
     for i in data.items():
-        exec("{} = '{}'".format(i[0], i[1]))
+        exec("{} = '{}'".format(i[0].upper(), i[1]))
     # ------ END - INITIALIZE - COLORS -  ------- #
     # ------------------------------------------- #
     root = Tk()
