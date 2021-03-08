@@ -172,9 +172,6 @@ class CurViewGui:
         amount = float(self.entry_add_inf.get())
         cur_put_db(cur, amount)
 
-    def shut_up_pc(self):
-        print('Your PC already shut down')
-
 
 if __name__ == '__main__':
     # ------------------------------------------- #
