@@ -4,39 +4,40 @@ sites:
   - path_site_metal: "https://cbr.ru/hd_base/metall/metall_base_new"
 
 
+# visit this --> https://docs.ansible.com/ansible/latest/user_guide/playbooks_variables.html
 curs:
   - dollar:
-    - link:
+    - link: 
     - tag: "span"
     - catch: 11
     - signs: "n"
 
   - gold:
-    - link:
+    - link: "{{ sites.path_site_metal }}"
     - tag: "td"
     - catch: 2
     - signs: "y"
 
   - silver:
-    - link:
+    - link: "{{ sites.path_site_metal }}"
     - tag: "td"
     - catch: 3
     - signs: "y"
 
   - palladium:
-    - link:
+    - link: "{{ sites.path_site_metal }}"
     - tag: "td"
     - catch: 5
     - signs: "y"
 
   - bitcoin:
-    - link:
+    - link: "{{ sites.path_site_crypto }}"
     - tag: "td"
     - catch: 4
     - signs: "y"
 
   - ethereum:
-    - link:
+    - link: "{{ sites.path_site_crypto }}"
     - tag: "td"
     - catch: 9
     - signs: "y"
