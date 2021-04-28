@@ -9,6 +9,8 @@ Questions:
 
 
 TODO:
+- [ ] to know how to make link to other variable in yaml
+- [ ] make normal parsing of curview/curview/configs/parsings.yaml
 - [ ] make class `Data` in parsing.py
 - [ ] use instead of date as variable date as function
 - [ ] put constants of parsing.py to yaml

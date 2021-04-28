@@ -7,7 +7,8 @@ CUR_ROW = (
 
 
 def list_curs_name():
-    '''This funcion return tuple of curs with their names
+    '''
+    Return tuple of currency names
     '''
     from .parsing import CUR_PARS
     return [i[0] for i in CUR_PARS]
