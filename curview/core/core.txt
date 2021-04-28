@@ -3,8 +3,9 @@ core impovement
 
 Questions:
     1. How it works?
-    2. What we can control from __init__
+    2. What we can control from __init__?
     3. What type of currency we can have?
+    4. Maybe rename core directoyry?
 
 
 TODO:
