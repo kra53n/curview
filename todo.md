@@ -10,6 +10,7 @@
 - [ ] make costum options and not only with terminal interface
     - [ ] make interface for PC(using tkinter for first time)
         - [ ] check setting of children windows near parent
+        - [ ] set `Add` window near main Widnow
     - [ ] make interface for phones
         - [ ] make interface for Android
         - [ ] make interface for ios
