@@ -1,0 +1,14 @@
+core impovement
+
+
+Questions:
+    1. How it works?
+    2. What we can control from __init__
+    3. What type of currency we can have?
+
+
+TODO:
+- [ ] make class `Data` in parsing.py
+- [ ] use instead of date as variable date as function
+- [ ] put constants of parsing.py to yaml
+- [ ] put NAME_DB as one of parametr function in wwdb.py
