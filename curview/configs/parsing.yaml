@@ -1,42 +1,42 @@
 sites:
-  - path_site: "https://форум-трейдеров.рф/chart-online.php"
-  - path_site_ctypto: "https://www.banknn.ru/kurs-kriptovalyut"
-  - path_site_metal: "https://cbr.ru/hd_base/metall/metall_base_new"
+  - path_site:        &path_site        "https://форум-трейдеров.рф/chart-online.php"
+  - path_site_ctypto: &path_site_ctypto "https://www.banknn.ru/kurs-kriptovalyut"
+  - path_site_metal:  &path_site_metal  "https://cbr.ru/hd_base/metall/metall_base_new"
 
 
 curs:
   - dollar:
-    - link:
+    - link: *path_site
     - tag: "span"
     - catch: 11
     - signs: "n"
 
   - gold:
-    - link:
+    - link: *path_site_metal
     - tag: "td"
     - catch: 2
     - signs: "y"
 
   - silver:
-    - link:
+    - link: *path_site_metal
     - tag: "td"
     - catch: 3
     - signs: "y"
 
   - palladium:
-    - link:
+    - link: *path_site_metal
     - tag: "td"
     - catch: 5
     - signs: "y"
 
   - bitcoin:
-    - link:
+    - link: *path_site_metal
     - tag: "td"
     - catch: 4
     - signs: "y"
 
   - ethereum:
-    - link:
+    - link: *path_site_metal
     - tag: "td"
     - catch: 9
     - signs: "y"

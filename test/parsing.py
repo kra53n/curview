@@ -1,5 +1,7 @@
 import yaml
 
-with open("parsing.yaml") as f:
+filename = "parsing.yaml"
+
+with open(filename) as f:
     yl = yaml.safe_load(f)
 print(yl)

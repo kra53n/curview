@@ -12,47 +12,22 @@ from tkinter.ttk import Combobox
 from yaml import safe_load as yaml_safe_load
 
 
-# ------------------------------------------------------ #
-# ------------- Cofnigure tkinter elements ------------- #
-# ------------------------------------------------------ #
-class ButtonMenu(Button):
-    '''Set default Button from tkinter our settings
-    for menu
-    '''
-    def __init__(self, *args, **kwargs):
-        super().__init__(*args,
-                         **kwargs,
-                         background = BACKGROUND,
-                         activebackground = BACKGROUNDACTIVE,
-                         foreground = FOREGROUND,
-                         activeforeground = FOREGROUNDACTIVE,
-                         bd = 0,
-                         )
-
-
-# --------------------------------------------------- #
-# ----------------------- GUI ----------------------- #
-# --------------------------------------------------- #
-class CurViewGui:
-    def __init__(self, master):
-        ### GENERATION OF USER INTERFACE
+class MainWindow:
+    def __init__(
+            self,
+            master,
+            background,
+            foreground,
+            activebackground,
+            activeforeground,
+        ):
         self.master = master
-        # set geomtry of interface
         self.master.geometry('768x432')
-        # set icon
-        # first argument mean that tk will use it for children too
         self.master.iconphoto(True, PhotoImage(file='assets/lightning.png'))
-        # set size after that we can`t change the size of window
         self.master.minsize(768, 432)
-        # identify width
         self.width = master.winfo_screenwidth()
-        # give title
-        if self.width > 400:
-            self.master.title('CurView - Currency view')
-        else:
-            self.master.title('CurView')
-        # set color for background of app
-        master.configure(background = BACKGROUNDAPP)
+        self.master.title('CurView')
+        master.configure(background = background)
 
         # create frames
         self.create_frame_menu()
