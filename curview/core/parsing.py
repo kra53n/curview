@@ -72,6 +72,11 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
 #     return eval(mes_return)
 
 def exec_parsing(cur_pars):
-    mes_return = ""
+    mes_return = {}
     for cp in cur_pars["curs"]:
-        print(cp)
+        curname = list(cp.keys())[0]
+        # for el in list(cp.values())[0]:
+        #     # print(list(el.keys())[0], list(el.values())[0])
+        #     values = [i for i in list]
+        # mes_return[curname] = [i for i in list(el.values())[0]]
+        # print(mes_return)
