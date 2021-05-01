@@ -5,24 +5,24 @@ from sys import exit
 
 
 ### CONSTANTS
-PATH_SITE = 'https://форум-трейдеров.рф/chart-online.php'
-PATH_SITE_CRYPTO = 'https://www.banknn.ru/kurs-kriptovalyut'
-PATH_SITE_METAL = 'https://cbr.ru/hd_base/metall/metall_base_new/'
-CUR_PARS = (
-    # currency
-    ('dollar', PATH_SITE, 'span', 11),
-    # metal
-    ('gold', PATH_SITE_METAL, 'td', 2, 'y'),
-    ('silver', PATH_SITE_METAL, 'td', 3, 'y'),
-    ('palladium', PATH_SITE_METAL, 'td', 5, 'y'),
-    # cryptocurrency
-    ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
-    ('ethereum', PATH_SITE_CRYPTO, 'td', 9, 'y'),
-)
+# PATH_SITE = 'https://форум-трейдеров.рф/chart-online.php'
+# PATH_SITE_CRYPTO = 'https://www.banknn.ru/kurs-kriptovalyut'
+# PATH_SITE_METAL = 'https://cbr.ru/hd_base/metall/metall_base_new/'
+# CUR_PARS = (
+#     # currency
+#     ('dollar', PATH_SITE, 'span', 11),
+#     # metal
+#     ('gold', PATH_SITE_METAL, 'td', 2, 'y'),
+#     ('silver', PATH_SITE_METAL, 'td', 3, 'y'),
+#     ('palladium', PATH_SITE_METAL, 'td', 5, 'y'),
+#     # cryptocurrency
+#     ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
+#     ('ethereum', PATH_SITE_CRYPTO, 'td', 9, 'y'),
+# )
 
 
 ### FUNCTIONS
-def get_html(url = PATH_SITE):
+def get_html(url):
     '''Function get html code and put it as text
     '''
     try:
@@ -35,7 +35,7 @@ def get_html(url = PATH_SITE):
         print('Page have some problems!')
     return html_doc.text
 
-def get_soup(url = PATH_SITE):
+def get_soup(url):
     soup = BeautifulSoup(get_html(url), 'html.parser')
     return soup
 
