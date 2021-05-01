@@ -61,14 +61,17 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
                 currency = check_signs(currency)
     return float(currency)
 
-def exec_parsing():
-    '''Function parse currency1
-    '''
-    mes_return = ''
-    for i in CUR_PARS:
-        if i[0] != CUR_PARS[0][0]:
-            mes_return += ', {}'.format(i[0])
-        else:
-            mes_return += CUR_PARS[0][0]
-        exec('{} = course_parser{}'.format(i[0], i[1:]))
-    return eval(mes_return)
+# def exec_parsing(cur_pars):
+#     mes_return = ''
+#     for i in CUR_PARS:
+#         if i[0] != CUR_PARS[0][0]:
+#             mes_return += ', {}'.format(i[0])
+#         else:
+#             mes_return += CUR_PARS[0][0]
+#         exec('{} = course_parser{}'.format(i[0], i[1:]))
+#     return eval(mes_return)
+
+def exec_parsing(cur_pars):
+    mes_return = ""
+    for cp in cur_pars["curs"]:
+        print(cp)
