@@ -1,6 +1,0 @@
-foo:
-  field1: &root one
-  field2: two
-
-
-mexi: *root
