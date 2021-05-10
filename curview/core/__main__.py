@@ -24,7 +24,7 @@
 #     wwdb(data, 0)
 
 
-from .parsing import exec_parsing
+from parsing import exec_parsing
 
 from yaml import safe_load
 import os.path
@@ -34,6 +34,18 @@ def load_parsing_inf(path, filename):
     with open(os.path.join(path, filename)) as f:
         return safe_load(f)
 
+def extract_curs():
+    pass
+
 def run_exec_parsing():
+    """
+    This function is something that help me to understand
+    what`s happends here. In fututre I will delete this.
+    """
     path, filename = "configs", "parsing.yaml"
     exec_parsing(load_parsing_inf(path, filename))
+
+
+if __name__ == "__main__":
+    print(load_parsing_inf("configs", "parsing.yaml"))
+    #run_exec_parsing()

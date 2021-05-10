@@ -3,17 +3,9 @@
 - [ ] make architecture better
 -------------------------------
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
-      about choose cancle, remove, add
-- [ ] make in assets/help.py buttons with commands that work normal
+      about choose cancle or remove
 - [ ] make own class of exception in get\_html() in parsing.py that will print 'ConnetcionError'
 - [ ] try avoid in get\_html() in parsing.py exit()
-- [ ] make costum options and not only with terminal interface
-    - [ ] make interface for PC(using tkinter for first time)
-        - [ ] check setting of children windows near parent
-        - [ ] set `Add` window near main Widnow
-    - [ ] make interface for phones
-        - [ ] make interface for Android
-        - [ ] make interface for ios
 
 ### COMPLETED
 - [x] check structer of core

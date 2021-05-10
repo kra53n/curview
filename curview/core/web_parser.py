@@ -21,10 +21,10 @@ from sys import exit
 # )
 
 
-### FUNCTIONS
 def get_html(url):
-    '''Function get html code and put it as text
-    '''
+    """
+    Function get html code and put it as text
+    """
     try:
         html_doc = requests.get(url)
     except:
@@ -39,7 +39,7 @@ def get_soup(url):
     soup = BeautifulSoup(get_html(url), 'html.parser')
     return soup
 
-def check_signs(value):
+def delete_signs(value):
     '''Function check signs in value of currency
     after parsing'''
     if ' ' in value:
@@ -58,8 +58,9 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
         if count == eq_count:
             currency = tag.string
             if signs.lower() == 'y':
-                currency = check_signs(currency)
+                currency = delete_signs(currency)
     return float(currency)
+
 
 # def exec_parsing(cur_pars):
 #     mes_return = ''
