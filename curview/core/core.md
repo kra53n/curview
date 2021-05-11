@@ -1,7 +1,8 @@
-core impovement
+**core impovement**
 
 
 Questions:
+
     1. How it works?
     2. What we can control from __init__?
       - parse information from configs/parsing.yaml
@@ -13,7 +14,7 @@ Questions:
 TODO:
 - [x] to know how to make link to other variable in yaml
 
-!!! - [ ] make in yaml_parser.py in curs_all_inf_extract dict with whom we could easy work
+- [ ] make in yaml_parser.py in curs_all_inf_extract dict with whom we could easy work!!!
 
 - [ ] use instead of date as variable date as function
 - [ ] put constants of parsing.py to yaml
