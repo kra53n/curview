@@ -23,17 +23,20 @@ def get_soup(url):
     return soup
 
 def delete_signs(value):
-    '''Function check signs in value of currency
-    after parsing'''
+    """
+    Function check signs in value of currency
+    after parsing
+    """
     if ' ' in value:
         value = value.replace(' ', '')
     if ',' in value:
         value = value.replace(',', '.')
     return value
 
-def course_parser(url, search_tag, eq_count, signs = 'n'):
-    '''Function that parse course of different
-    currency'''
+def course_parse(url, search_tag, eq_count, signs = 'n'):
+    """
+    Parse course of currency
+    """
     soup = get_soup(url)
     count = 0
     for tag in soup.find_all(search_tag):
@@ -45,33 +48,25 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
     return float(currency)
 
 
-# def exec_parsing(cur_pars):
-#     mes_return = ''
-#     for i in CUR_PARS:
-#         if i[0] != CUR_PARS[0][0]:
-#             mes_return += ', {}'.format(i[0])
-#         else:
-#             mes_return += CUR_PARS[0][0]
-#         exec('{} = course_parser{}'.format(i[0], i[1:]))
-#     return eval(mes_return)
-
 
 if __name__ == "__main__":
     from yaml_parser import curs_all_inf_load
     path = "../configs"
     filename = "parse.yaml"
     data = curs_all_inf_load(path, filename)
+    print(data)
+    print("========================================")
 
     for i in data:
         print(
             i["name"],
-            "\t\t",
-            course_parser(
+            "\t\t\t\t",
+            course_parse(
                 i["url"],
                 i["tag"],
                 i["catch"],
                 i["signs"],
             ),
-            "\t\t",
+            "\t\t\t\t",
             i["type"],
         )

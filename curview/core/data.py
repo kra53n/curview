@@ -1,32 +1,29 @@
-from .parsing import CUR_PARS, exec_parsing
-from .__init__ import CUR_ROW
-from .date import date
+"""
+from yaml_parser import curs_all_inf_load
+path = "../configs"
+filename = "parse.yaml"
+data = curs_all_inf_load(path, filename)
 
+for i in data:
+    print(
+        i["name"],
+        "\t\t",
+        course_parser(
+            i["url"],
+            i["tag"],
+            i["catch"],
+            i["signs"],
+        ),
+        "\t\t",
+        i["type"],
+    )
+"""
 
-### INITIALIZE CURRENCY
-cur_vals =  exec_parsing()
-for i in range(len(CUR_PARS)):
-    exec('{} = {}'.format(CUR_PARS[i][0], cur_vals[i]))
-
-
-### FUNCTIONS
-def cur_to_dict(cur, amount = 0):
-    '''Function create dict with full information of currency
-    '''
-    data = {
-        'date': date,
-        'name': cur,
-        'amount': amount,
-    }
-
-    if cur in CUR_ROW:
-        data['course_dlr'] = eval(cur)
-        data['dlr'] = eval(cur) * amount
-        data['course_rub'] = round((eval(cur) * dollar), 4)
-        data['rub'] = round((eval(cur) * dollar * amount), 4)
-
-    if cur not in CUR_ROW:
-        data['course_rub'] = round(eval(cur), 4)
-        data['rub'] = round(eval(cur) * amount, 4)
-
-    return data
+def curs_info(curname, data_to_parse):
+    """
+    Argument      | Description
+    --------------------------------
+    curname       | name of currency
+    data_to_parse | data to parse
+    """
+    pass
