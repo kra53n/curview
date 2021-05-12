@@ -14,8 +14,8 @@ Questions:
 TODO:
 - [x] to know how to make link to other variable in yaml
 
-- [ ] make in yaml_parser.py in curs_all_inf_extract dict with whom we could easy work!!!
+- [ ] make in yaml\_parser.py in curs\_all\_inf\_extract dict with whom we could easy work!!!
 
 - [ ] use instead of date as variable date as function
 - [ ] put constants of parsing.py to yaml
-- [ ] put NAME_DB as one of parametr function in wwdb.py
+- [ ] put NAME\_DB as one of parametr function in wwdb.py

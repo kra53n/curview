@@ -6,22 +6,25 @@ def load_yaml(path, filename):
     with open(os.path.join(path, filename)) as f:
         return safe_load(f)
 
-def curs_all_inf_extract(path, filename):
+def curs_all_inf_load(path, filename):
     """
-    From yaml file extract currencies
+    From yaml extract all information about currencies
+    for webscraping
     """
     data = load_yaml(path, filename)
     data = data["curs"]
     return data
 
-def cur_names_extract(path, filename):
-    data = curs_all_inf_extract(path, filename)
-    return [tuple(name.keys())[0] for name in data]
+def cur_names_get(path, filename):
+    data = curs_all_inf_load(path, filename)
+    #return [tuple(name.keys())[0] for name in data]
+    return [i["name"] for i in data]
 
 
 if __name__ == "__main__":
     path = "../configs"
     filename = "parsing.yaml"
 
-    #print(curs_all_inf_extract(path, filename))
-    print(cur_names_extract(path, filename))
+    data = curs_all_inf_load(path, filename)
+    [print(i) for i in data]
+    print(cur_names_get(path, filename))

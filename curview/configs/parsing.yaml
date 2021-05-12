@@ -5,38 +5,50 @@ sites:
 
 
 curs:
-  - dollar:
-    - link: *path_site
-    - tag: "span"
-    - catch: 11
-    - signs: "n"
+  -
+    name: "dollar"
+    link: *path_site
+    tag: "span"
+    catch: 11
+    signs: "n"
+    type: "cur"
 
-  - gold:
-    - link: *path_site_metal
-    - tag: "td"
-    - catch: 2
-    - signs: "y"
+  -
+    name: "gold"
+    link: *path_site_metal
+    tag: "td"
+    catch: 2
+    signs: "y"
+    type: "metal"
 
-  - silver:
-    - link: *path_site_metal
-    - tag: "td"
-    - catch: 3
-    - signs: "y"
+  -
+    name: "silver"
+    link: *path_site_metal
+    tag: "td"
+    catch: 3
+    signs: "y"
+    type: "metal"
 
-  - palladium:
-    - link: *path_site_metal
-    - tag: "td"
-    - catch: 5
-    - signs: "y"
+  -
+    name: "palladium"
+    link: *path_site_metal
+    tag: "td"
+    catch: 5
+    signs: "y"
+    type: "metal"
 
-  - bitcoin:
-    - link: *path_site_crypto
-    - tag: "td"
-    - catch: 4
-    - signs: "y"
+  -
+    name: "bitcoin"
+    link: *path_site_crypto
+    tag: "td"
+    catch: 4
+    signs: "y"
+    type: "crypto_cur"
 
-  - ethereum:
-    - link: *path_site_crypto
-    - tag: "td"
-    - catch: 9
-    - signs: "y"
+  -
+    name: "ethereum"
+    link: *path_site_crypto
+    tag: "td"
+    catch: 9
+    signs: "y"
+    type: "crypto_cur"
