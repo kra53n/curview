@@ -7,7 +7,7 @@ sites:
 curs:
   -
     name: "dollar"
-    link: *path_site
+    url: *path_site
     tag: "span"
     catch: 11
     signs: "n"
@@ -15,7 +15,7 @@ curs:
 
   -
     name: "gold"
-    link: *path_site_metal
+    url: *path_site_metal
     tag: "td"
     catch: 2
     signs: "y"
@@ -23,7 +23,7 @@ curs:
 
   -
     name: "silver"
-    link: *path_site_metal
+    url: *path_site_metal
     tag: "td"
     catch: 3
     signs: "y"
@@ -31,7 +31,7 @@ curs:
 
   -
     name: "palladium"
-    link: *path_site_metal
+    url: *path_site_metal
     tag: "td"
     catch: 5
     signs: "y"
@@ -39,7 +39,7 @@ curs:
 
   -
     name: "bitcoin"
-    link: *path_site_crypto
+    url: *path_site_crypto
     tag: "td"
     catch: 4
     signs: "y"
@@ -47,7 +47,7 @@ curs:
 
   -
     name: "ethereum"
-    link: *path_site_crypto
+    url: *path_site_crypto
     tag: "td"
     catch: 9
     signs: "y"

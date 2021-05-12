@@ -54,3 +54,24 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
 #             mes_return += CUR_PARS[0][0]
 #         exec('{} = course_parser{}'.format(i[0], i[1:]))
 #     return eval(mes_return)
+
+
+if __name__ == "__main__":
+    from yaml_parser import curs_all_inf_load
+    path = "../configs"
+    filename = "parse.yaml"
+    data = curs_all_inf_load(path, filename)
+
+    for i in data:
+        print(
+            i["name"],
+            "\t\t",
+            course_parser(
+                i["url"],
+                i["tag"],
+                i["catch"],
+                i["signs"],
+            ),
+            "\t\t",
+            i["type"],
+        )

@@ -17,7 +17,6 @@ def curs_all_inf_load(path, filename):
 
 def cur_names_get(path, filename):
     data = curs_all_inf_load(path, filename)
-    #return [tuple(name.keys())[0] for name in data]
     return [i["name"] for i in data]
 
 
