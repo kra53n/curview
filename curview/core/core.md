@@ -12,10 +12,4 @@ Questions:
 
 
 TODO:
-- [x] to know how to make link to other variable in yaml
-
-- [ ] make in yaml\_parser.py in curs\_all\_inf\_extract dict with whom we could easy work!!!
-
-- [ ] use instead of date as variable date as function
-- [ ] put constants of parsing.py to yaml
 - [ ] put NAME\_DB as one of parametr function in wwdb.py

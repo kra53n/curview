@@ -4,23 +4,6 @@ import requests
 from sys import exit
 
 
-### CONSTANTS
-# PATH_SITE = 'https://форум-трейдеров.рф/chart-online.php'
-# PATH_SITE_CRYPTO = 'https://www.banknn.ru/kurs-kriptovalyut'
-# PATH_SITE_METAL = 'https://cbr.ru/hd_base/metall/metall_base_new/'
-# CUR_PARS = (
-#     # currency
-#     ('dollar', PATH_SITE, 'span', 11),
-#     # metal
-#     ('gold', PATH_SITE_METAL, 'td', 2, 'y'),
-#     ('silver', PATH_SITE_METAL, 'td', 3, 'y'),
-#     ('palladium', PATH_SITE_METAL, 'td', 5, 'y'),
-#     # cryptocurrency
-#     ('bitcoin', PATH_SITE_CRYPTO, 'td', 4, 'y'),
-#     ('ethereum', PATH_SITE_CRYPTO, 'td', 9, 'y'),
-# )
-
-
 def get_html(url):
     """
     Function get html code and put it as text
@@ -71,13 +54,3 @@ def course_parser(url, search_tag, eq_count, signs = 'n'):
 #             mes_return += CUR_PARS[0][0]
 #         exec('{} = course_parser{}'.format(i[0], i[1:]))
 #     return eval(mes_return)
-
-def exec_parsing(cur_pars):
-    mes_return = {}
-    for cp in cur_pars["curs"]:
-        curname = list(cp.keys())[0]
-        # for el in list(cp.values())[0]:
-        #     # print(list(el.keys())[0], list(el.values())[0])
-        #     values = [i for i in list]
-        # mes_return[curname] = [i for i in list(el.values())[0]]
-        # print(mes_return)

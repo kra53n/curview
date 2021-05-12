@@ -8,6 +8,10 @@
 - [ ] try avoid in get\_html() in parsing.py exit()
 
 ### COMPLETED
+- [x] to know how to make link to other variable in yaml
+- [x] make in yaml\_parser.py in curs\_all\_inf\_extract dict with whom we could easy work!!!
+- [x] use instead of date as variable date as function
+- [x] put constants of parsing.py to yaml
 - [x] check structer of core
 - [x] make better structure of code
 - [x] solve problem with load\_color and create\_colors in gui\_tk.py
