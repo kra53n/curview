@@ -41,7 +41,6 @@ def cur_parse(path, filename, curname):
                 dollar_parse["signs"],
             ),
         )
-
     return cur
 
 

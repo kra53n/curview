@@ -8,6 +8,7 @@
 - [ ] try avoid in get\_html() in parsing.py exit()
 
 ### COMPLETED
+- [x] think how to work with data in data.py
 - [x] think about type of currency
 - [x] to know how to make link to other variable in yaml
 - [x] make in yaml\_parser.py in curs\_all\_inf\_extract dict with whom we could easy work!!!

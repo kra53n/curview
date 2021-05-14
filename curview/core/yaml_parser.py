@@ -27,12 +27,3 @@ def cur_inf_load(path, filename, curname):
 def cur_names_get(path, filename):
     data = curs_all_inf_load(path, filename)
     return [i["name"] for i in data]
-
-
-if __name__ == "__main__":
-    path = "../configs"
-    filename = "parse.yaml"
-
-    data = curs_all_inf_load(path, filename)
-    [print(i) for i in data]
-    print(cur_names_get(path, filename))
