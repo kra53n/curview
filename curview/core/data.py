@@ -1,29 +1,14 @@
-"""
-from yaml_parser import curs_all_inf_load
-path = "../configs"
-filename = "parse.yaml"
-data = curs_all_inf_load(path, filename)
+def cur_expand(cur_name, cur_type, course, course_ruble=0):
+    cur = {
+        "name": cur_name,
+        "cur_type": cur_type,
+    }
 
-for i in data:
-    print(
-        i["name"],
-        "\t\t",
-        course_parser(
-            i["url"],
-            i["tag"],
-            i["catch"],
-            i["signs"],
-        ),
-        "\t\t",
-        i["type"],
-    )
-"""
+    if cur_type == "cur" or "metal":
+        cur["course_ruble"] = course
 
-def curs_info(curname, data_to_parse):
-    """
-    Argument      | Description
-    --------------------------------
-    curname       | name of currency
-    data_to_parse | data to parse
-    """
-    pass
+    if cur_type == "crypto_cur":
+        cur["course_dollar"] = course
+        cur["course_ruble"] = course * course_ruble
+
+    return cur

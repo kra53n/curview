@@ -46,27 +46,3 @@ def course_parse(url, search_tag, eq_count, signs = 'n'):
             if signs.lower() == 'y':
                 currency = delete_signs(currency)
     return float(currency)
-
-
-
-if __name__ == "__main__":
-    from yaml_parser import curs_all_inf_load
-    path = "../configs"
-    filename = "parse.yaml"
-    data = curs_all_inf_load(path, filename)
-    print(data)
-    print("========================================")
-
-    for i in data:
-        print(
-            i["name"],
-            "\t\t\t\t",
-            course_parse(
-                i["url"],
-                i["tag"],
-                i["catch"],
-                i["signs"],
-            ),
-            "\t\t\t\t",
-            i["type"],
-        )
