@@ -1,0 +1,54 @@
+sites:
+  - path_site:        &path_site        "https://форум-трейдеров.рф/chart-online.php"
+  - path_site_ctypto: &path_site_crypto "https://www.banknn.ru/kurs-kriptovalyut"
+  - path_site_metal:  &path_site_metal  "https://cbr.ru/hd_base/metall/metall_base_new"
+
+
+curs:
+  -
+    name: "dollar"
+    url: *path_site
+    tag: "span"
+    catch: 11
+    signs: "n"
+    type: "cur"
+
+  -
+    name: "gold"
+    url: *path_site_metal
+    tag: "td"
+    catch: 2
+    signs: "y"
+    type: "metal"
+
+  -
+    name: "silver"
+    url: *path_site_metal
+    tag: "td"
+    catch: 3
+    signs: "y"
+    type: "metal"
+
+  -
+    name: "palladium"
+    url: *path_site_metal
+    tag: "td"
+    catch: 5
+    signs: "y"
+    type: "metal"
+
+  -
+    name: "bitcoin"
+    url: *path_site_crypto
+    tag: "td"
+    catch: 4
+    signs: "y"
+    type: "crypto_cur"
+
+  -
+    name: "ethereum"
+    url: *path_site_crypto
+    tag: "td"
+    catch: 9
+    signs: "y"
+    type: "crypto_cur"

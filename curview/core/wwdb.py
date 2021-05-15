@@ -1,65 +1,59 @@
 # WWDB - WORK WITH DATA BASE
 
 import sqlite3 as sql
-from .date import exactly_time as ex_t
-from .__init__ import CUR_ROW
 
 
-### CONSTANTS
-NAME_DB = str(ex_t()[0]) + '.db'
-
-
-### FUNCTIOCNS
 def text_for_creating_table(currency):
-    '''Funtcion collect message in dependence of
-    situation
-    ================================================
-    Argument currency get type of currency for goal
-    of function
-    '''
-    message = 'CREATE TABLE IF NOT EXISTS `{}` '.format(currency)
+    message = 'CREATE TABLE IF NOT EXISTS `{}` '.format(currency["name"])
     message += '(`date` STRING, `amount` REAL,`course_rubles` REAL, '
     message += '`rubles` REAL'
-    if currency in CUR_ROW:
+    if currency["cur_type"] == "crypto_cur":
         message += ', `course_dollar` REAL, `dollar` REAL'
     message += ')'
     return message
 
-def text_for_filling_table(currency):
-    '''Function collect message in dependence of
+def text_for_filling_table(currency, date, amount):
+    """
+    Function collect message in dependence of
     situation
     ================================================
     Argument of currency get dic of currency with
     information
-    '''
+    """
     message = 'INSERT INTO `{}` '.format(currency['name'])
-    message += 'VALUES ("{}", '.format(currency['date'])
-    message += '{}, '.format(currency['amount'])
-    message += '{}, {}'.format(currency['course_rub'], currency['rub'])
-    if currency['name'] in CUR_ROW:
-        message += ', {}, {}'.format(currency['course_dlr'], currency['dlr'])
+    message += 'VALUES ("{}", '.format(date)
+    message += '{}, '.format(amount)
+    message += '{}, {}'.format(
+        currency['course_ruble'],
+        currency['course_ruble'] * amount,
+    )
+    if currency["cur_type"] == "crypto_cur":
+        message += ', {}, {}'.format(
+            currency["course_dollar"],
+            currency["course_dollar"] * amount,
+        )
     message += ')'
     return message
 
-def wwdb(currency, choice):
-    '''Function write or recieve data from data base
+def wwdb(db_name, db_choice, currency, amount, date):
+    """
+    Function write or recieve data from data base
     ================================================
     Argument currency get dic with inf of currency
     ================================================
     Argument choice:
-        choice = 0 or choice = 1
-        choice = 0 --> write
-        choice = 1 --> recieve
-    '''
-    con = sql.connect(NAME_DB)
-    message = text_for_creating_table(currency['name'])
+        choice = "write"
+        choice = "get"
+    """
+    con = sql.connect(db_name)
+    message = text_for_creating_table(currency)
     with con:
         cur = con.cursor()
         # creating table if not exists
         cur.execute(message)
-        if choice == 0:
-            cur.execute(text_for_filling_table(currency))
-        elif choice == 1:
+        if db_choice == "write":
+            cur.execute(text_for_filling_table(currency, date, amount))
+        elif db_choice == "get":
             cur.execute('SELECT * FROM `{}`'.format(currency['name']))
             rows = cur.fetchall()
             for row in rows:

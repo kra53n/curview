@@ -28,5 +28,5 @@ def get_date_inf(kind, ex_t = exactly_time()):
     return inf
     
 
-### OUTPUT
-date = get_date_inf(2) + '.' + get_date_inf(1) + '.' + get_date_inf(0)
+def date():
+    return get_date_inf(2) + '.' + get_date_inf(1) + '.' + get_date_inf(0)
