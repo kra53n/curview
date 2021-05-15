@@ -43,30 +43,3 @@ def cur_parse(path, filename, curname):
             ),
         )
     return cur
-
-
-if __name__ == "__main__":
-    from random import choice
-    from random import randrange
-
-    path = "configs"
-    filename = "parse.yaml"
-
-    curs = [
-        cur_parse(path, filename, curname)
-        for curname in cur_names_get(path , filename)
-    ]
-    [print(cur) for cur in curs]
-
-
-    db_name = "2021.db"
-    db_choice = "write"
-    
-    for cur in curs:
-        wwdb(
-            db_name=db_name,
-            db_choice=db_choice,
-            currency=cur,
-            amount=randrange(1, 100),
-            date=date(),
-        )
