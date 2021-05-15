@@ -1,6 +1,7 @@
 ### TODO:
 -------------------------------
 - [ ] make architecture better
+- [ ] add asynchrone loading of courses
 -------------------------------
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
       about choose cancle or remove
@@ -8,6 +9,7 @@
 - [ ] try avoid in get\_html() in parsing.py exit()
 
 ### COMPLETED
+- [x] put NAME\_DB as one of parametr function in wwdb.py
 - [x] think how to work with data in data.py
 - [x] think about type of currency
 - [x] to know how to make link to other variable in yaml
@@ -24,7 +26,7 @@
   and tables with different currency dollar, bitcoin and e.t.c.
 - [x] think more about message in wwdb.py in wwdb(). Maybe will better put it in funcion?
 - [x] in data.py with __ethereum(), __palladium() and e.t.c make one function with OPTION
-- [x] check exception of get_html() in parsing.py. And make it better
+- [x] check exception of get\_html() in parsing.py. And make it better
 - [x] rewrite data.py
 - [x] write api ```Api must connect with others modules and make working with all data very easy and understandable```
 - [x] start write README.md

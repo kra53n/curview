@@ -2,5 +2,5 @@
 
 
 TODO:
-- [ ] put NAME\_DB as one of parametr function in wwdb.py
+- [ ] make class "Wwdb" istead of function wwdb
 - [ ] think about renaming of core directory

@@ -1,9 +1,10 @@
 from yaml_parser import cur_names_get
-from yaml_parser import cur_inf_load
+from date import date
+from wwdb import wwdb
 
-from web_parser import course_parse
-
-from data import cur_expand
+from yaml_parser import cur_inf_load as __cur_inf_load
+from web_parser import course_parse as __course_parse
+from data import cur_expand as __cur_expand
 
 
 def cur_parse(path, filename, curname):
@@ -12,10 +13,10 @@ def cur_parse(path, filename, curname):
     Return currency name, course of cur and type of cur as dict
     """
     # get from yaml information about parsing of currenct currency
-    to_parse = cur_inf_load(path, filename, curname)
+    to_parse = __cur_inf_load(path, filename, curname)
 
     # parse currency and get course of it
-    course = course_parse(
+    course = __course_parse(
         to_parse["url"],
         to_parse["tag"],
         to_parse["catch"],
@@ -23,18 +24,18 @@ def cur_parse(path, filename, curname):
     )
 
     if to_parse["type"] != "crypto_cur":
-        cur = cur_expand(
+        cur = __cur_expand(
             curname,
             to_parse["type"],
             course,
         )
     if to_parse["type"] == "crypto_cur":
-        dollar_parse = cur_inf_load(path, filename, "dollar")
-        cur = cur_expand(
+        dollar_parse = __cur_inf_load(path, filename, "dollar")
+        cur = __cur_expand(
             curname,
             to_parse["type"],
             course,
-            course_parse(
+            __course_parse(
                 dollar_parse["url"],
                 dollar_parse["tag"],
                 dollar_parse["catch"],
@@ -46,9 +47,26 @@ def cur_parse(path, filename, curname):
 
 if __name__ == "__main__":
     from random import choice
+    from random import randrange
+
     path = "configs"
     filename = "parse.yaml"
-    curname = choice(cur_names_get(path, filename))
 
-    cur = cur_parse(path, filename, curname)
-    print(cur)
+    curs = [
+        cur_parse(path, filename, curname)
+        for curname in cur_names_get(path , filename)
+    ]
+    [print(cur) for cur in curs]
+
+
+    db_name = "2021.db"
+    db_choice = "write"
+    
+    for cur in curs:
+        wwdb(
+            db_name=db_name,
+            db_choice=db_choice,
+            currency=cur,
+            amount=randrange(1, 100),
+            date=date(),
+        )
