@@ -1,6 +1,5 @@
 ### TODO:
 -------------------------------
-- [ ] make architecture better
 - [ ] add asynchrone loading of courses
 -------------------------------
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
@@ -9,6 +8,7 @@
 - [ ] try avoid in get\_html() in parsing.py exit()
 
 ### COMPLETED
+- [x] make architecture better
 - [x] put NAME\_DB as one of parametr function in wwdb.py
 - [x] think how to work with data in data.py
 - [x] think about type of currency

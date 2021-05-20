@@ -5,8 +5,8 @@ Right now it is thing that just can add currency to db.
 """
 
 from tkinter import Tk
-from style import ButtonMenu
-from style import colors
+#from style import ButtonMenu
+#from style import colors
 
 
 class MainWindow:
