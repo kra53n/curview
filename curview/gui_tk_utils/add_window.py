@@ -32,17 +32,17 @@ class AddWindow:
         ButtonAddWindow(
             self.main_frame,
             text="Add",
-            command=self.cmd_add_inf,
+            command=self.add_inf,
         ).grid(row=0, column=2, sticky="nswe", padx=3)
 
         self.count_var = StringVar()
-        self.add_combobox = Combobox(
+        self.combobox = Combobox(
             self.main_frame,
             textvariable=self.count_var,
             values=kwargs["cur_names"],
             state="readonly",
         )
-        self.add_combobox.grid(row=1, column=0, padx=3)
+        self.combobox.grid(row=1, column=0, padx=3)
 
         self.entry = EntryAddWindow(self.main_frame)
         self.entry.grid(row=1, column=1, padx=3)
@@ -55,8 +55,13 @@ class AddWindow:
             row=1, column=2, sticky="nswe", padx=3,
         )
 
-    def cmd_add_inf(self):
-        cur = str(self.add_combobox.get())
-        amount = float(self.entry.get())
+    def add_inf(self):
+        #from ..gui_tk import Cmds
+        #curname = self.combobox.get()
+        #amount = self.entry.get()
 
-        print(cur, amount)
+        #Cmds.add_inf(
+        #    cur_name=curname,
+        #    amount=amount,
+        #)
+        pass

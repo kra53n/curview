@@ -12,6 +12,11 @@ def cur_parse(path, filename, curname):
     """
     Parse information about currency.
     Return currency name, course of cur and type of cur as dict
+
+    +--------------------------- ARGS ---------------------------+
+    | path - path to file of yaml with parsing inforamtion       |
+    | filename - filename of yaml with parsing information       |
+    +------------------------------------------------------------+
     """
     # get from yaml information about parsing of currenct currency
     to_parse = __cur_inf_load(path, filename, curname)
