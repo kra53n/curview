@@ -3,7 +3,8 @@ import time
 
 ### FUNCTIONS
 def exactly_time():
-    '''Function return tuple with this data:
+    '''
+    Function return tuple with this data:
     year, month and day
     '''
     # request our date in seconds
@@ -16,7 +17,8 @@ def exactly_time():
     return localtime
 
 def get_date_inf(kind, ex_t = exactly_time()):
-    '''Function return year, month and day
+    '''
+    Function return year, month and day
     parametre kind have value 0(year), 1(month), 2(day)
     '''
     inf = str(ex_t[kind])
