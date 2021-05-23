@@ -9,6 +9,7 @@ from tkinter import Entry
 import os.path
 from yaml import safe_load
 
+kaka = "You are kaka!"
 
 # parse colors.yaml and return as dict(name: color code).
 # for example: "background": "#777777"

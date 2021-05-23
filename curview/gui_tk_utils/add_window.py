@@ -56,12 +56,21 @@ class AddWindow:
         )
 
     def add_inf(self):
-        #from ..gui_tk import Cmds
-        #curname = self.combobox.get()
-        #amount = self.entry.get()
+        from core import exactly_time
+        from core import cur_parse
+        from core import wwdb
+        from core import date
 
-        #Cmds.add_inf(
-        #    cur_name=curname,
-        #    amount=amount,
-        #)
-        pass
+        cur = cur_parse(
+            path="configs",
+            filename="parse.yaml",
+            curname=self.combobox.get(),
+        )
+        
+        wwdb(
+            db_name=str(exactly_time()[0])+".db",
+            db_choice="write",
+            currency=cur,
+            amount=float(self.entry.get()),
+            date=date(),
+        )
