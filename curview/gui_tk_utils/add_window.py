@@ -43,6 +43,7 @@ class AddWindow:
             state="readonly",
         )
         self.combobox.grid(row=1, column=0, padx=3)
+        self.combobox.current(0)
 
         self.entry = EntryAddWindow(self.main_frame)
         self.entry.grid(row=1, column=1, padx=3)
