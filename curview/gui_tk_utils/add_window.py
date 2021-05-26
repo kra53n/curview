@@ -8,18 +8,19 @@ from .style import EntryAddWindow
 from .style import colors
 
 
-class AddWindow:
+class AddWindow(Frame):
     def __init__(self, main, **kwargs):
+        Frame.__init__(self, main)
+
         self.main = main
         self.main.title("Add")
-        self.main.resizable(0, 0)
         self.main.config(bg=colors["backgroundapp"])
 
         self.main_frame = Frame(
-            self.main,
+            self,
             background=colors["backgroundapp"],
         )
-        self.main_frame.pack(padx=3, pady=6)
+        self.main_frame.pack()
 
         LabelAddWindow(
             self.main_frame,
