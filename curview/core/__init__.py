@@ -1,16 +1,22 @@
-from yaml_parser import cur_names_get
-from date import date
-from wwdb import wwdb
+from .yaml_parser import cur_names_get
+from .date import exactly_time
+from .date import date
+from .wwdb import wwdb
 
-from yaml_parser import cur_inf_load as __cur_inf_load
-from web_parser import course_parse as __course_parse
-from data import cur_expand as __cur_expand
+from .yaml_parser import cur_inf_load as __cur_inf_load
+from .web_parser import course_parse as __course_parse
+from .data import cur_expand as __cur_expand
 
 
 def cur_parse(path, filename, curname):
     """
     Parse information about currency.
     Return currency name, course of cur and type of cur as dict
+
+    +--------------------------- ARGS ---------------------------+
+    | path - path to file of yaml with parsing inforamtion       |
+    | filename - filename of yaml with parsing information       |
+    +------------------------------------------------------------+
     """
     # get from yaml information about parsing of currenct currency
     to_parse = __cur_inf_load(path, filename, curname)
@@ -43,3 +49,19 @@ def cur_parse(path, filename, curname):
             ),
         )
     return cur
+
+def cur_parse_all(path, filename):
+    """
+    Return list of dicts
+
+    +--------------------------- ARGS ---------------------------+
+    | path - path to file of yaml with parsing inforamtion       |
+    | filename - filename of yaml with parsing information       |
+    | curnames - list of currency names                          |
+    +------------------------------------------------------------+
+    """
+    curnames = cur_names_get(path, filename)
+    return [
+        cur_parse(path, filename, curname)
+        for curname in curnames
+    ]
