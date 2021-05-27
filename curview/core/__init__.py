@@ -49,3 +49,19 @@ def cur_parse(path, filename, curname):
             ),
         )
     return cur
+
+def cur_parse_all(path, filename):
+    """
+    Return list of dicts
+
+    +--------------------------- ARGS ---------------------------+
+    | path - path to file of yaml with parsing inforamtion       |
+    | filename - filename of yaml with parsing information       |
+    | curnames - list of currency names                          |
+    +------------------------------------------------------------+
+    """
+    curnames = cur_names_get(path, filename)
+    return [
+        cur_parse(path, filename, curname)
+        for curname in curnames
+    ]

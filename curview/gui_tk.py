@@ -5,12 +5,17 @@ from core import cur_names_get
 
 
 root = Tk()
-root.config(background="#000")
+
+path="configs"
+filename="parse.yaml"
+
 AddWindow(
     root,
     cur_names=cur_names_get(
-        path="configs",
-        filename="parse.yaml"
+        path=path,
+        filename=filename,
     ),
+    path=path,
+    filename=filename,
 ).pack()
 root.mainloop()

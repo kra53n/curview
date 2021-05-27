@@ -12,6 +12,13 @@ class AddWindow(Frame):
     def __init__(self, main, **kwargs):
         Frame.__init__(self, main)
 
+        # path to configs
+        self.path = kwargs["path"]
+        # path to parse.yaml
+        self.filename = kwargs["filename"]
+        # list of currencies in dict
+        self.update_curs()
+
         self.main = main
         self.main.title("Add")
         self.main.config(bg=colors["backgroundapp"])
@@ -57,17 +64,23 @@ class AddWindow(Frame):
             row=1, column=2, sticky="nswe", padx=3,
         )
 
+    def update_curs(self):
+        """
+        Update dict with currencies information
+        """
+        from core import cur_parse_all
+        self.curs = cur_parse_all(self.path, self.filename)
+
     def add_inf(self):
         from core import exactly_time
-        from core import cur_parse
         from core import wwdb
         from core import date
 
-        cur = cur_parse(
-            path="configs",
-            filename="parse.yaml",
-            curname=self.combobox.get(),
-        )
+        combobox = self.combobox.get()
+        for cur_inf in self.curs:
+            if combobox == cur_inf["name"]:
+                cur = cur_inf
+                break
         
         wwdb(
             db_name=str(exactly_time()[0])+".db",
