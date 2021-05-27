@@ -2,6 +2,10 @@ from tkinter import Frame
 from tkinter import StringVar
 from tkinter.ttk import Combobox
 
+from core import exactly_time
+from core import wwdb
+from core import date
+
 from .style import ButtonAddWindow
 from .style import LabelAddWindow
 from .style import EntryAddWindow
@@ -72,10 +76,6 @@ class AddWindow(Frame):
         self.curs = cur_parse_all(self.path, self.filename)
 
     def add_inf(self):
-        from core import exactly_time
-        from core import wwdb
-        from core import date
-
         combobox = self.combobox.get()
         for cur_inf in self.curs:
             if combobox == cur_inf["name"]:
