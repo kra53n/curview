@@ -1,7 +1,9 @@
 ### TODO:
 -------------------------------
-- [ ] add asynchrone loading of courses
+- [ ] check how works loading data from db
+- [ ] improve works of loading data if it is bad
 -------------------------------
+- [ ] add asynchrone loading of courses
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
       about choose cancle or remove
 - [ ] make own class of exception in get\_html() in parsing.py that will print 'ConnetcionError'
