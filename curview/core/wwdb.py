@@ -54,11 +54,11 @@ def wwdb(db_name, db_choice, currency, amount, date):
         if db_choice == "write":
             cur.execute(text_for_filling_table(currency, date, amount))
         elif db_choice == "get":
+            # TODO: put it to a seperate function
             cur.execute('SELECT * FROM `{}`'.format(currency['name']))
+            names = list(map(lambda x: x[0], cur.description))
             rows = cur.fetchall()
-            for row in rows:
-                for i in range(len(row)):
-                    print(row[i], end = ' ')
+            return names, rows
         else:
             print('You are have mistake in choice'.upper())
         con.commit()
