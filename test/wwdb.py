@@ -67,3 +67,11 @@ def wwdb(db_name, db_choice, currency, amount=None, date=None):
             print('You are have mistake in choice'.upper())
         con.commit()
         cur.close()
+
+
+if __name__ == "__main__":
+    db_name = "test.db"
+    db_choice = "get"
+    currency = {"name": "dollar", "cur_type": "cur"}
+    data = wwdb(db_name, db_choice, currency)
+    print(data)
