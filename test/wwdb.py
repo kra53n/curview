@@ -72,6 +72,6 @@ def wwdb(db_name, db_choice, currency, amount=None, date=None):
 if __name__ == "__main__":
     db_name = "test.db"
     db_choice = "get"
-    currency = {"name": "dollar", "cur_type": "cur"}
+    currency = {"name": "bitcoin", "cur_type": "crypto_cur"}
     data = wwdb(db_name, db_choice, currency)
     print(data)

@@ -3,7 +3,7 @@ from tkinter import StringVar
 from tkinter.ttk import Combobox
 
 from core import exactly_time
-from core import wwdb
+from core import Wwdb
 from core import date
 
 from .style import ButtonAddWindow
@@ -82,10 +82,9 @@ class AddWindow(Frame):
                 cur = cur_inf
                 break
         
-        wwdb(
+        Wwdb(
             db_name=str(exactly_time()[0])+".db",
-            db_choice="write",
             currency=cur,
             amount=float(self.entry.get()),
             date=date(),
-        )
+        ).put()

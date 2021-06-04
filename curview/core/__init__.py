@@ -1,7 +1,7 @@
 from .yaml_parser import cur_names_get
 from .date import exactly_time
 from .date import date
-from .wwdb import wwdb
+from .wwdb import Wwdb
 
 from .yaml_parser import cur_inf_load as __cur_inf_load
 from .web_parser import course_parse as __course_parse
