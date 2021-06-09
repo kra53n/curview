@@ -77,7 +77,7 @@ class Wwdb:
             cur = self.con.cursor()
 
             # get information about currency from database
-            cur.execute('SELECT * FROM `{}`'.format(currency['name']))
+            cur.execute('SELECT * FROM `{}`'.format(self.currency['name']))
 
             names = list(map(lambda x: x[0], cur.description))
             rows = cur.fetchall()

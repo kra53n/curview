@@ -1,5 +1,6 @@
 from tkinter import Tk
 from gui_tk_utils.add_window import AddWindow
+#from gui_tk_utils.table_widget import Table
 
 from core import cur_names_get
 
