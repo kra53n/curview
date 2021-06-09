@@ -1,6 +1,10 @@
 ### TODO:
 -------------------------------
-- [ ] check how works loading data from db
+- [ ] make menu widget
+#### menu widget
+- [ ] add scrolling
+
+-------------------------------
 - [ ] improve works of loading data if it is bad
 -------------------------------
 - [ ] add asynchrone loading of courses
@@ -10,6 +14,8 @@
 - [ ] try avoid in get\_html() in parsing.py exit()
 
 ### COMPLETED
+- [x] check how works loading data from db
+- [x] make table in tkinter
 - [x] make architecture better
 - [x] put NAME\_DB as one of parametr function in wwdb.py
 - [x] think how to work with data in data.py
@@ -30,8 +36,8 @@
 - [x] in data.py with __ethereum(), __palladium() and e.t.c make one function with OPTION
 - [x] check exception of get\_html() in parsing.py. And make it better
 - [x] rewrite data.py
-- [x] write api ```Api must connect with others modules and make working with all data very easy and understandable```
+- [x] write api 'Api must connect with others modules and make working with all data very easy and understandable'
 - [x] start write README.md
 - [x] choose palette with colors
 - [x] complete Combobox
-- [x] complete add_inf window in curview/gui
+- [x] complete add\_inf window in curview/gui
