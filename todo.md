@@ -1,11 +1,6 @@
 ### TODO:
 -------------------------------
-- [ ] make menu widget
-#### menu widget
-- [ ] add scrolling
-
--------------------------------
-- [ ] improve works of loading data if it is bad
+- [ ] make add\_window looks like in sketch
 -------------------------------
 - [ ] add asynchrone loading of courses
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
@@ -14,6 +9,7 @@
 - [ ] try avoid in get\_html() in parsing.py exit()
 
 ### COMPLETED
+- [x] make menu widget
 - [x] check how works loading data from db
 - [x] make table in tkinter
 - [x] make architecture better
