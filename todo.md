@@ -1,6 +1,6 @@
 ### TODO:
 -------------------------------
-
+- [ ] make add\_window looks like in sketch
 -------------------------------
 - [ ] add asynchrone loading of courses
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
