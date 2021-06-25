@@ -7,7 +7,7 @@ from .style import ButtonMenu
 class Menu(Frame):
     def __init__(self, main, options_and_commands, colors=colors):
         """
-        + --------------------------- ARGUMENTS ------------------------ +
+        + ------------------------- ARGUMENTS -------------------------- +
         | options_and_commands - tuple or list that consider another     |
         |                        tuple or list that consider name of     |
         |                        option and action of option             |

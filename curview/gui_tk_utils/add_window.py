@@ -18,7 +18,7 @@ class AddWindow(Frame):
 
         # path to configs
         self.path = kwargs["path"]
-        # path to parse.yaml
+        # name with paring information. For example: parse.yaml
         self.filename = kwargs["filename"]
         # list of currencies in dict
         self.update_curs()
