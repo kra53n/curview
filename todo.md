@@ -1,19 +1,16 @@
 ### TODO:
 -------------------------------
-- [ ] make menu widget
-#### menu widget
-- [ ] add scrolling
 
--------------------------------
-- [ ] improve works of loading data if it is bad
 -------------------------------
 - [ ] add asynchrone loading of courses
 - [ ] if user have data for today of currency and he whant add the same then make him permisson
-      about choose cancle or remove
-- [ ] make own class of exception in get\_html() in parsing.py that will print 'ConnetcionError'
+      about choose cancle or remove, or add
+- [ ] make exception errot in get_\_html() in parsing.py
 - [ ] try avoid in get\_html() in parsing.py exit()
 
 ### COMPLETED
+- [x] improve works of loading data if it is bad
+- [x] make menu widget
 - [x] check how works loading data from db
 - [x] make table in tkinter
 - [x] make architecture better
